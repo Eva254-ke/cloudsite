@@ -13,45 +13,86 @@ import Footer from '../components/Footer.astro';
   <Header />
   
   <main>
-    <!-- Simple About Content (for now) -->
-    <section class="py-20">
-      <div class="container max-w-4xl">
-        <h1 class="mb-8">About CloudBridge Networks</h1>
-        
-        <div class="prose prose-lg">
-          <p class="text-xl text-gray-600 mb-8">
-            We're building the infrastructure that will connect the next 100 million Africans to the internet.
+    <section class="about-section">
+      <div class="container">
+        <div class="about-hero">
+          <p class="about-kicker">About CloudBridge Networks</p>
+          <h1>Building Core Internet Infrastructure Across Africa</h1>
+          <p class="about-lead">
+            CloudBridge Networks is a technology company focused on delivering reliable, scalable, and
+            affordable connectivity infrastructure for communities, enterprises, and independent operators.
           </p>
-          
-          <h2 class="mt-12 mb-4">Our Mission</h2>
-          <p>
-            To democratize internet access across Africa by providing affordable, reliable connectivity 
-            infrastructure and the technology platform that powers independent ISPs.
-          </p>
-          
-          <h2 class="mt-12 mb-4">Our Vision</h2>
-          <p>
-            A connected Africa where every village, school, business, and home has access to affordable, 
-            high-speed internet — powered by CloudBridge infrastructure and technology.
-          </p>
-          
-          <h2 class="mt-12 mb-4">Founded in Nairobi</h2>
-          <p>
-            CloudBridge Networks was founded by Zachariah Omwenga Evans, a technologist who saw firsthand 
-            how lack of internet access limits opportunities across Africa.
-          </p>
-          
-          <div class="mt-12 p-6 bg-gray-50 rounded-lg">
-            <p class="font-medium mb-2">📍 Nairobi, Kenya</p>
-            <p class="font-medium mb-2">📅 Founded 2024</p>
-            <p class="font-medium">🇰🇪 Reg: BN-Y6S98MJB</p>
-          </div>
         </div>
-        
-        <div class="mt-12 text-center">
-          <a href="/contact" class="btn btn-primary">
-            Contact Us
-          </a>
+
+        <div class="about-metrics">
+          <article class="metric-card">
+            <h2>Mission</h2>
+            <p>
+              Democratize internet access across Africa through infrastructure deployment,
+              operational excellence, and locally relevant technology platforms.
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <h2>Vision</h2>
+            <p>
+              A connected Africa where every school, business, and household has dependable,
+              high-speed internet as a foundation for growth.
+            </p>
+          </article>
+
+          <article class="metric-card">
+            <h2>Approach</h2>
+            <p>
+              Combine satellite backhaul, modern wireless architecture, and automated operations
+              to deliver carrier-grade performance at practical cost.
+            </p>
+          </article>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <h2>Founded in Nairobi</h2>
+            <p>
+              Founded by Zachariah Omwenga Evans, CloudBridge Networks was built to solve a clear
+              infrastructure gap: high-quality connectivity remains out of reach for many regions.
+            </p>
+            <p>
+              Our team designs and operates resilient network systems tailored for African market
+              realities, from dense urban districts to underserved rural locations.
+            </p>
+          </article>
+
+          <aside class="about-card about-facts">
+            <h2>Company Facts</h2>
+            <dl>
+              <div class="fact-row">
+                <dt>Headquarters</dt>
+                <dd>Nairobi, Kenya</dd>
+              </div>
+              <div class="fact-row">
+                <dt>Founded</dt>
+                <dd>2024</dd>
+              </div>
+              <div class="fact-row">
+                <dt>Registration</dt>
+                <dd>BN-Y6S98MJB</dd>
+              </div>
+              <div class="fact-row">
+                <dt>Focus</dt>
+                <dd>Infrastructure, ISP Enablement, Managed Connectivity</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="about-cta">
+          <h2>Work With CloudBridge Networks</h2>
+          <p>
+            If you are planning a new connectivity project or scaling an existing operation,
+            our team can help you design and deploy the right infrastructure.
+          </p>
+          <a href="/contact" class="btn btn-primary">Contact Us</a>
         </div>
       </div>
     </section>
@@ -61,19 +102,163 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
-  .prose {
-    line-height: 1.8;
-    color: var(--color-gray-700);
+  .about-section {
+    padding: 4.5rem 0;
+    background: var(--color-gray-50);
   }
-  .prose h2 {
-    margin-top: 2.5rem;
+
+  .about-hero {
+    max-width: 860px;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+
+  .about-kicker {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.8rem;
+  }
+
+  .about-hero h1 {
     margin-bottom: 1rem;
-    color: var(--color-dark);
   }
-  .prose p {
-    margin-bottom: 1.5rem;
+
+  .about-lead {
+    font-size: 1.06rem;
+    color: var(--color-gray-600);
+    max-width: 760px;
+    margin: 0 auto;
   }
-  .prose-lg {
-    font-size: 1.125rem;
+
+  .about-metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .metric-card {
+    background: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.15rem;
+  }
+
+  .metric-card h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .metric-card p {
+    margin: 0;
+    color: var(--color-gray-600);
+    font-size: 0.95rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-card {
+    background: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem;
+  }
+
+  .about-card h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .about-card p {
+    color: var(--color-gray-600);
+    margin-bottom: 0.85rem;
+  }
+
+  .about-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-facts dl {
+    margin: 0;
+  }
+
+  .fact-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .fact-row:last-child {
+    border-bottom: none;
+  }
+
+  .fact-row dt {
+    font-size: 0.82rem;
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .fact-row dd {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-gray-700);
+    font-weight: 600;
+  }
+
+  .about-cta {
+    margin-top: 1rem;
+    text-align: center;
+    background: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.6rem 1.2rem;
+  }
+
+  .about-cta h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-cta p {
+    max-width: 720px;
+    margin: 0 auto 1rem;
+    color: var(--color-gray-600);
+  }
+
+  @media (min-width: 768px) {
+    .about-metrics {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-grid {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.1rem;
+    }
+
+    .about-card {
+      padding: 1.45rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about-section {
+      padding: 3rem 0;
+    }
+
+    .fact-row {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
   }
 </style>

@@ -70,23 +70,22 @@
             loading="lazy"
           />
           <!-- Floating Cards (Decorative - shows platform features) -->
-          <div class="floating-card card-1">
-            <span class="card-icon" aria-hidden="true">
-              <!-- Credit Card SVG -->
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3" fill="#10b981"/><rect x="2" y="9" width="20" height="2" fill="#fff"/><rect x="6" y="15" width="4" height="2" rx="1" fill="#fff"/></svg>
-            </span>
-            <span class="card-text">M-Pesa Billing</span>
-          </div>
           <div class="floating-card card-2">
-            <span class="card-icon" aria-hidden="true">📶</span>
-            <span class="card-text">WiFi Management</span>
+            <span class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 16a11 11 0 0 1 16 0" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7.5 12.5a7 7 0 0 1 9 0" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+                <path d="M11 19h2" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="card-text">Network Operations</span>
           </div>
           <div class="floating-card card-3">
             <span class="card-icon" aria-hidden="true">
               <!-- Analytics/Bar Chart SVG -->
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="13" width="3" height="7" rx="1.5" fill="#3b82f6"/><rect x="10.5" y="9" width="3" height="11" rx="1.5" fill="#3b82f6"/><rect x="17" y="5" width="3" height="15" rx="1.5" fill="#3b82f6"/></svg>
             </span>
-            <span class="card-text">Analytics</span>
+            <span class="card-text">Performance Analytics</span>
           </div>
         </div>
       </div>
@@ -256,6 +255,15 @@
     margin: 0 0 0 auto;
   }
 
+  .hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.16), transparent 40%);
+    pointer-events: none;
+  }
+
   .hero-image {
     width: 100%;
     aspect-ratio: 16/10;
@@ -304,38 +312,36 @@
   /* Floating Cards (Decorative) */
   .floating-card {
     position: absolute;
-    background: white;
-    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.65rem 0.9rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--color-gray-700);
     animation: float 3s ease-in-out infinite;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    z-index: 2;
   }
   
   .card-icon {
     font-size: 1.25rem;
   }
   
-  .card-1 {
-    top: 10%;
-    left: -10%;
-    animation-delay: 0s;
-  }
-  
   .card-2 {
-    top: 50%;
-    right: -15%;
+    top: 12%;
+    right: -8%;
     animation-delay: 1s;
   }
   
   .card-3 {
     bottom: 10%;
-    left: -5%;
+    left: -8%;
     animation-delay: 2s;
   }
   

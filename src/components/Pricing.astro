@@ -7,13 +7,20 @@
     <div class="section-header">
       <h2 class="section-title">Transparent Pricing For Every Stage</h2>
       <p class="section-subtitle">
-        Commission-based billing with a monthly floor. Predictable costs, no hidden charges.
+        Built for operators who need predictable economics, fast deployment, and room to scale.
       </p>
+    </div>
+
+    <div class="pricing-highlights" aria-label="Pricing highlights">
+      <span class="highlight-pill">No setup fees</span>
+      <span class="highlight-pill">Commission-only model with monthly floor</span>
+      <span class="highlight-pill">Scale from 1 site to enterprise network</span>
     </div>
 
     <div class="pricing-grid">
       <article class="pricing-card">
         <div class="pricing-header">
+          <p class="plan-chip">Launch</p>
           <h3 class="plan-name">Starter</h3>
           <p class="plan-tagline">For new deployments</p>
         </div>
@@ -23,18 +30,19 @@
           <p class="price-minimum">Minimum: <strong>KES 499 / month</strong></p>
         </div>
         <ul class="plan-features">
-          <li><span class="check-icon" aria-hidden="true">✓</span>Up to 2 routers</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Up to 500 active users</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>M-Pesa billing integration</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Core dashboard + reports</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>2 routers</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>500 active users</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>M-Pesa billing</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Core dashboard</li>
         </ul>
-        <a href="/contact" class="btn btn-outline btn-full">Contact Us</a>
+        <a href="/contact" class="btn btn-outline btn-full">Start a Conversation</a>
         <p class="plan-note">Break-even at about KES 16,667 monthly sales</p>
       </article>
 
       <article class="pricing-card popular">
         <div class="popular-badge">Recommended</div>
         <div class="pricing-header">
+          <p class="plan-chip">Scale</p>
           <h3 class="plan-name">Growing</h3>
           <p class="plan-tagline">For scaling operators</p>
         </div>
@@ -44,17 +52,18 @@
           <p class="price-minimum">Minimum: <strong>KES 1,499 / month</strong></p>
         </div>
         <ul class="plan-features">
-          <li><span class="check-icon" aria-hidden="true">✓</span>Up to 10 routers</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>10 routers</li>
           <li><span class="check-icon" aria-hidden="true">✓</span>Unlimited users</li>
           <li><span class="check-icon" aria-hidden="true">✓</span>Advanced analytics</li>
           <li><span class="check-icon" aria-hidden="true">✓</span>Priority support</li>
         </ul>
-        <a href="/contact" class="btn btn-primary btn-full">Contact Us</a>
-        <p class="plan-note">Break-even at about KES 60,000 monthly sales</p>
+        <a href="/contact" class="btn btn-primary btn-full">Choose Growing</a>
+        <p class="plan-note">Most selected plan for multi-location hotspot operators</p>
       </article>
 
       <article class="pricing-card">
         <div class="pricing-header">
+          <p class="plan-chip">Enterprise</p>
           <h3 class="plan-name">Enterprise</h3>
           <p class="plan-tagline">For multi-site infrastructure</p>
         </div>
@@ -67,17 +76,20 @@
           <li><span class="check-icon" aria-hidden="true">✓</span>Unlimited routers</li>
           <li><span class="check-icon" aria-hidden="true">✓</span>White-label portal</li>
           <li><span class="check-icon" aria-hidden="true">✓</span>API access</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Dedicated account support</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Dedicated support</li>
         </ul>
-        <a href="/contact" class="btn btn-outline btn-full">Contact Us</a>
+        <a href="/contact" class="btn btn-outline btn-full">Request Enterprise Plan</a>
         <p class="plan-note">Break-even at about KES 250,000 monthly sales</p>
       </article>
     </div>
 
+  </div>
+
+  <div class="pricing-calculator-edge">
     <div class="pricing-calculator">
       <div class="calculator-header">
-        <h3>Estimate Monthly Cost</h3>
-        <p>Enter your projected monthly sales to compare plans instantly.</p>
+        <h3>Estimate Monthly Platform Cost</h3>
+        <p>Model your expected sales and instantly see the most cost-effective package.</p>
       </div>
       <div class="calculator-content">
         <div class="calculator-input">
@@ -200,6 +212,16 @@
   .pricing-section {
     padding: 4.5rem 0;
     background: var(--color-gray-50);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 0%, rgba(59, 130, 246, 0.08), transparent 45%);
+    pointer-events: none;
   }
 
   .section-header {
@@ -218,6 +240,28 @@
     margin-bottom: 0;
   }
 
+  .pricing-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.34rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-gray-300);
+    background: white;
+    color: var(--color-gray-700);
+    font-size: 0.76rem;
+    font-weight: 600;
+  }
+
   /* Pricing grid */
   .pricing-grid {
     display: grid;
@@ -225,6 +269,8 @@
     gap: 1.25rem;
     margin-bottom: 2rem;
     align-items: stretch;
+    position: relative;
+    z-index: 1;
   }
 
   /* Pricing card */
@@ -232,12 +278,13 @@
     background: white;
     border: 1px solid var(--color-gray-200);
     border-radius: var(--border-radius-lg);
-    padding: 1.5rem;
+    padding: 1.25rem;
     position: relative;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    backdrop-filter: blur(2px);
   }
 
   .pricing-card:hover {
@@ -267,13 +314,22 @@
   }
 
   .pricing-header {
-    margin-bottom: 1rem;
-    padding-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.65rem;
     border-bottom: 1px solid var(--color-gray-200);
   }
 
+  .plan-chip {
+    margin: 0 0 0.35rem;
+    color: var(--color-primary);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
   .plan-name {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-bottom: 0.25rem;
   }
 
@@ -284,12 +340,12 @@
   }
 
   .pricing-price {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .price-percentage {
     display: block;
-    font-size: 2.15rem;
+    font-size: 1.9rem;
     font-weight: 800;
     color: var(--color-primary);
     line-height: 1;
@@ -303,8 +359,8 @@
   }
 
   .price-minimum {
-    margin-top: 0.65rem;
-    padding: 0.55rem 0.7rem;
+    margin-top: 0.5rem;
+    padding: 0.45rem 0.6rem;
     background: var(--color-gray-50);
     border-radius: var(--border-radius);
     font-size: 0.82rem;
@@ -319,10 +375,10 @@
   .plan-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 1rem;
+    margin: 0 0 0.8rem;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.4rem;
     flex-grow: 1;
   }
 
@@ -330,7 +386,7 @@
     display: flex;
     align-items: flex-start;
     gap: 0.55rem;
-    font-size: 0.89rem;
+    font-size: 0.82rem;
     color: var(--color-gray-700);
     line-height: 1.45;
   }
@@ -351,7 +407,7 @@
   }
 
   .plan-note {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     color: var(--color-gray-500);
     margin-top: 0.7rem;
     margin-bottom: 0;
@@ -360,10 +416,22 @@
 
   /* Pricing calculator */
   .pricing-calculator {
-    background: white;
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-lg);
-    padding: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    border: 0;
+    border-radius: 0;
+    padding: 1.2rem 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pricing-calculator-edge {
+    width: 100%;
+    margin-top: 1.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(239, 246, 255, 0.85) 100%);
+    border-top: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+    position: relative;
+    z-index: 1;
   }
 
   .calculator-header {
@@ -383,8 +451,8 @@
   }
 
   .calculator-content {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
   }
 
   .calculator-input {
@@ -507,6 +575,10 @@
 
   /* Responsive */
   @media (min-width: 768px) {
+    .pricing-highlights {
+      margin-bottom: 1.4rem;
+    }
+
     .pricing-grid {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -514,7 +586,25 @@
     .calculator-results {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    .pricing-calculator {
+      padding: 1.7rem 1.5rem;
+    }
+
+    .calculator-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
     
+  }
+
+  @media (min-width: 980px) {
+    .plan-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0.7rem;
+      row-gap: 0.45rem;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -527,13 +617,21 @@
     .pricing-section {
       padding: 3rem 0;
     }
+
+    .pricing-highlights {
+      justify-content: flex-start;
+    }
     
     .pricing-card.popular {
       transform: none;
     }
     
     .pricing-card {
-      padding: 1.2rem;
+      padding: 1rem;
+    }
+
+    .pricing-calculator-edge {
+      margin-top: 1rem;
     }
   }
 </style>

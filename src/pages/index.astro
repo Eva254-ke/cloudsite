@@ -19,21 +19,169 @@ import Footer from '../components/Footer.astro';
     <Pricing />
     
     <!-- Final CTA Section -->
-    <section class="py-20 bg-primary text-white text-center">
-      <div class="container">
-        <h2 class="text-white mb-4">Ready to Build With Us?</h2>
-        <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-          Partner with CloudBridge Networks to deploy next-generation connectivity and infrastructure across Africa.
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <div class="final-cta-card">
+        <p class="final-cta-kicker">Partnership Opportunity</p>
+        <h2 id="final-cta-title">Ready to Build With CloudBridge?</h2>
+        <p class="final-cta-copy">
+          Work with our team to plan, deploy, and operate reliable network infrastructure for
+          businesses, institutions, and communities across Africa.
         </p>
-        <a href="/contact" class="btn bg-white text-primary hover:bg-gray-100">
-          Contact Us
-        </a>
-        <p class="mt-4 text-sm opacity-75">
-          Already launched • Trusted by ISPs & businesses
-        </p>
+
+        <div class="final-cta-actions">
+          <a href="/contact" class="btn btn-primary btn-lg">Talk to Our Team</a>
+          <a href="/about" class="btn btn-secondary btn-lg">Why CloudBridge</a>
+        </div>
+
+        <div class="final-cta-trust">
+          <span>Launched and operational</span>
+          <span class="trust-separator" aria-hidden="true"></span>
+          <span>Trusted by ISPs and business operators</span>
+        </div>
       </div>
     </section>
   </main>
   
   <Footer />
 </BaseLayout>
+
+<style>
+  .final-cta {
+    padding: 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 55%, #1d4ed8 100%);
+  }
+
+  .final-cta-card {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+    border-radius: 0;
+    padding: 2rem 1rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta-card::after {
+    content: '';
+    position: absolute;
+    top: -35%;
+    right: -15%;
+    width: 240px;
+    height: 240px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 65%);
+    pointer-events: none;
+  }
+
+  .final-cta-kicker {
+    margin: 0 0 0.45rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.84);
+  }
+
+  .final-cta-card h2 {
+    color: white;
+    margin-bottom: 0.6rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .final-cta-copy {
+    margin: 0;
+    max-width: 740px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .final-cta-actions {
+    margin-top: 1.1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    max-width: 100%;
+  }
+
+  .final-cta-actions .btn-primary {
+    background: white;
+    color: var(--color-primary);
+    border: none;
+  }
+
+  .final-cta-actions .btn-primary:hover {
+    background: var(--color-gray-100);
+    color: var(--color-primary);
+  }
+
+  .final-cta-actions .btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .final-cta-actions .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    border-color: white;
+  }
+
+  .final-cta-trust {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: center;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .trust-separator {
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (min-width: 768px) {
+    .final-cta {
+      padding: 0;
+    }
+
+    .final-cta-card {
+      padding: 3.2rem 1.5rem;
+      text-align: center;
+    }
+
+    .final-cta-copy {
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .final-cta-actions {
+      margin: 1.35rem auto 0;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      max-width: none;
+    }
+
+    .final-cta-actions .btn {
+      min-width: 200px;
+    }
+
+    .final-cta-trust {
+      justify-content: center;
+      margin-top: 1.2rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .final-cta-card {
+      padding: 3.5rem 2rem;
+    }
+  }
+</style>
