@@ -1,0 +1,79 @@
+---
+// about.astro - Company story, mission, vision
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="About Us"
+  description="CloudBridge Networks is building network infrastructure across Africa. Starlink installations, ISP technology, and connectivity for underserved communities."
+  canonical="https://cloudbridge.network/about"
+>
+  <Header />
+  
+  <main>
+    <!-- Simple About Content (for now) -->
+    <section class="py-20">
+      <div class="container max-w-4xl">
+        <h1 class="mb-8">About CloudBridge Networks</h1>
+        
+        <div class="prose prose-lg">
+          <p class="text-xl text-gray-600 mb-8">
+            We're building the infrastructure that will connect the next 100 million Africans to the internet.
+          </p>
+          
+          <h2 class="mt-12 mb-4">Our Mission</h2>
+          <p>
+            To democratize internet access across Africa by providing affordable, reliable connectivity 
+            infrastructure and the technology platform that powers independent ISPs.
+          </p>
+          
+          <h2 class="mt-12 mb-4">Our Vision</h2>
+          <p>
+            A connected Africa where every village, school, business, and home has access to affordable, 
+            high-speed internet — powered by CloudBridge infrastructure and technology.
+          </p>
+          
+          <h2 class="mt-12 mb-4">Founded in Nairobi</h2>
+          <p>
+            CloudBridge Networks was founded by Zachariah Omwenga Evans, a technologist who saw firsthand 
+            how lack of internet access limits opportunities across Africa.
+          </p>
+          
+          <div class="mt-12 p-6 bg-gray-50 rounded-lg">
+            <p class="font-medium mb-2">📍 Nairobi, Kenya</p>
+            <p class="font-medium mb-2">📅 Founded 2024</p>
+            <p class="font-medium">🇰🇪 Reg: BN-Y6S98MJB</p>
+          </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+          <a href="/contact" class="btn btn-primary">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>
+
+<style>
+  .prose {
+    line-height: 1.8;
+    color: var(--color-gray-700);
+  }
+  .prose h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+  }
+  .prose p {
+    margin-bottom: 1.5rem;
+  }
+  .prose-lg {
+    font-size: 1.125rem;
+  }
+</style>

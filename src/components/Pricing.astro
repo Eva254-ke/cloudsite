@@ -1,0 +1,539 @@
+---
+// Pricing.astro - Professional pricing section
+---
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Transparent Pricing For Every Stage</h2>
+      <p class="section-subtitle">
+        Commission-based billing with a monthly floor. Predictable costs, no hidden charges.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="pricing-card">
+        <div class="pricing-header">
+          <h3 class="plan-name">Starter</h3>
+          <p class="plan-tagline">For new deployments</p>
+        </div>
+        <div class="pricing-price">
+          <span class="price-percentage">3%</span>
+          <span class="price-label">of monthly sales</span>
+          <p class="price-minimum">Minimum: <strong>KES 499 / month</strong></p>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check-icon" aria-hidden="true">✓</span>Up to 2 routers</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Up to 500 active users</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>M-Pesa billing integration</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Core dashboard + reports</li>
+        </ul>
+        <a href="/contact" class="btn btn-outline btn-full">Contact Us</a>
+        <p class="plan-note">Break-even at about KES 16,667 monthly sales</p>
+      </article>
+
+      <article class="pricing-card popular">
+        <div class="popular-badge">Recommended</div>
+        <div class="pricing-header">
+          <h3 class="plan-name">Growing</h3>
+          <p class="plan-tagline">For scaling operators</p>
+        </div>
+        <div class="pricing-price">
+          <span class="price-percentage">2.5%</span>
+          <span class="price-label">of monthly sales</span>
+          <p class="price-minimum">Minimum: <strong>KES 1,499 / month</strong></p>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check-icon" aria-hidden="true">✓</span>Up to 10 routers</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Unlimited users</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Advanced analytics</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Priority support</li>
+        </ul>
+        <a href="/contact" class="btn btn-primary btn-full">Contact Us</a>
+        <p class="plan-note">Break-even at about KES 60,000 monthly sales</p>
+      </article>
+
+      <article class="pricing-card">
+        <div class="pricing-header">
+          <h3 class="plan-name">Enterprise</h3>
+          <p class="plan-tagline">For multi-site infrastructure</p>
+        </div>
+        <div class="pricing-price">
+          <span class="price-percentage">2%</span>
+          <span class="price-label">of monthly sales</span>
+          <p class="price-minimum">Minimum: <strong>KES 4,999 / month</strong></p>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check-icon" aria-hidden="true">✓</span>Unlimited routers</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>White-label portal</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>API access</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span>Dedicated account support</li>
+        </ul>
+        <a href="/contact" class="btn btn-outline btn-full">Contact Us</a>
+        <p class="plan-note">Break-even at about KES 250,000 monthly sales</p>
+      </article>
+    </div>
+
+    <div class="pricing-calculator">
+      <div class="calculator-header">
+        <h3>Estimate Monthly Cost</h3>
+        <p>Enter your projected monthly sales to compare plans instantly.</p>
+      </div>
+      <div class="calculator-content">
+        <div class="calculator-input">
+          <label for="sales-input">Projected Monthly Sales (KES)</label>
+          <input type="number" id="sales-input" placeholder="50000" min="0" class="calculator-field" inputmode="numeric" />
+        </div>
+
+        <div class="calculator-presets" aria-label="Quick sales presets">
+          <button type="button" class="preset-btn" data-sales="20000">KES 20K</button>
+          <button type="button" class="preset-btn" data-sales="50000">KES 50K</button>
+          <button type="button" class="preset-btn" data-sales="100000">KES 100K</button>
+          <button type="button" class="preset-btn" data-sales="250000">KES 250K</button>
+        </div>
+
+        <div class="calculator-results" id="calculator-results">
+          <div class="result-card" data-plan="Starter">
+            <span class="result-plan">Starter</span>
+            <span class="result-amount" id="starter-cost">KES 499</span>
+          </div>
+          <div class="result-card" data-plan="Growing">
+            <span class="result-plan">Growing</span>
+            <span class="result-amount" id="growing-cost">KES 1,499</span>
+          </div>
+          <div class="result-card" data-plan="Enterprise">
+            <span class="result-plan">Enterprise</span>
+            <span class="result-amount" id="enterprise-cost">KES 4,999</span>
+          </div>
+        </div>
+
+        <div class="calculator-recommendation" id="calculator-recommendation" aria-live="polite">
+          <p class="recommend-title">Best Plan Right Now: <strong id="recommended-plan">Starter</strong></p>
+          <p class="recommend-copy" id="recommended-saving">Most cost-effective at your current projected sales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Pricing Calculator Logic
+  const salesInput = document.getElementById('sales-input');
+  const starterCost = document.getElementById('starter-cost');
+  const growingCost = document.getElementById('growing-cost');
+  const enterpriseCost = document.getElementById('enterprise-cost');
+  const recommendedPlan = document.getElementById('recommended-plan');
+  const recommendedSaving = document.getElementById('recommended-saving');
+  const resultCards = document.querySelectorAll('.result-card');
+  const presetButtons = document.querySelectorAll('.preset-btn');
+  
+  function calculateCost(sales, rate, minimum) {
+    const commission = sales * rate;
+    return Math.max(minimum, commission);
+  }
+  
+  function formatCurrency(amount) {
+    return 'KES ' + amount.toLocaleString('en-KE', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  }
+  
+  function updateCalculator() {
+    const sales = parseFloat(salesInput.value) || 0;
+    
+    // Starter: 3%, min 499
+    const starterTotal = calculateCost(sales, 0.03, 499);
+    starterCost.textContent = formatCurrency(starterTotal);
+    
+    // Growing: 2.5%, min 1499
+    const growingTotal = calculateCost(sales, 0.025, 1499);
+    growingCost.textContent = formatCurrency(growingTotal);
+    
+    // Enterprise: 2%, min 4999
+    const enterpriseTotal = calculateCost(sales, 0.02, 4999);
+    enterpriseCost.textContent = formatCurrency(enterpriseTotal);
+
+    const totals = [
+      { plan: 'Starter', total: starterTotal },
+      { plan: 'Growing', total: growingTotal },
+      { plan: 'Enterprise', total: enterpriseTotal }
+    ].sort((a, b) => a.total - b.total);
+
+    const best = totals[0];
+    const second = totals[1];
+    const savings = Math.max(0, second.total - best.total);
+
+    if (recommendedPlan) {
+      recommendedPlan.textContent = best.plan;
+    }
+
+    if (recommendedSaving) {
+      if (savings > 0) {
+        recommendedSaving.textContent = `Saves about ${formatCurrency(savings)} per month compared to ${second.plan} at this sales level.`;
+      } else {
+        recommendedSaving.textContent = 'All plans currently cost the same at this sales level.';
+      }
+    }
+
+    resultCards.forEach((card) => {
+      const isBest = card.getAttribute('data-plan') === best.plan;
+      card.classList.toggle('result-best', isBest);
+    });
+  }
+  
+  if (salesInput) {
+    salesInput.addEventListener('input', updateCalculator);
+  }
+
+  presetButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const value = btn.getAttribute('data-sales');
+      if (!salesInput || !value) return;
+      salesInput.value = value;
+      updateCalculator();
+    });
+  });
+
+  updateCalculator();
+</script>
+
+<style>
+  /* Pricing layout */
+  .pricing-section {
+    padding: 4.5rem 0;
+    background: var(--color-gray-50);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .section-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    margin-bottom: 0;
+  }
+
+  /* Pricing grid */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    align-items: stretch;
+  }
+
+  /* Pricing card */
+  .pricing-card {
+    background: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .pricing-card:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .pricing-card.popular {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  .pricing-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .plan-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .plan-tagline {
+    font-size: 0.86rem;
+    color: var(--color-gray-600);
+    margin: 0;
+  }
+
+  .pricing-price {
+    margin-bottom: 1rem;
+  }
+
+  .price-percentage {
+    display: block;
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .price-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-gray-600);
+    margin-top: 0.25rem;
+  }
+
+  .price-minimum {
+    margin-top: 0.65rem;
+    padding: 0.55rem 0.7rem;
+    background: var(--color-gray-50);
+    border-radius: var(--border-radius);
+    font-size: 0.82rem;
+    color: var(--color-gray-700);
+    margin-bottom: 0;
+  }
+
+  .price-minimum strong {
+    color: var(--color-primary);
+  }
+
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex-grow: 1;
+  }
+
+  .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.89rem;
+    color: var(--color-gray-700);
+    line-height: 1.45;
+  }
+
+  .check-icon {
+    width: 18px;
+    height: 18px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.64rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .plan-note {
+    font-size: 0.78rem;
+    color: var(--color-gray-500);
+    margin-top: 0.7rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /* Pricing calculator */
+  .pricing-calculator {
+    background: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+  }
+
+  .calculator-header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .calculator-header h3 {
+    margin-bottom: 0.35rem;
+    font-size: 1.2rem;
+  }
+
+  .calculator-header p {
+    color: var(--color-gray-600);
+    margin-bottom: 0;
+    font-size: 0.92rem;
+  }
+
+  .calculator-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .calculator-input {
+    margin-bottom: 1rem;
+  }
+
+  .calculator-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .preset-btn {
+    border: 1px solid var(--color-gray-300);
+    background: white;
+    color: var(--color-gray-700);
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .preset-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .calculator-input label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: var(--color-gray-700);
+    font-size: 0.9rem;
+  }
+
+  .calculator-field {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+
+  .calculator-field:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .calculator-results {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .result-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0.85rem;
+    background: var(--color-gray-50);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--color-gray-300);
+    transition: var(--transition);
+  }
+
+  .result-best {
+    border-left-color: var(--color-accent) !important;
+    background: #ecfdf5;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .result-card:nth-child(1) {
+    border-left-color: var(--color-primary);
+  }
+
+  .result-card:nth-child(2) {
+    border-left-color: var(--color-secondary);
+  }
+
+  .result-card:nth-child(3) {
+    border-left-color: var(--color-accent);
+  }
+
+  .result-plan {
+    font-weight: 600;
+    color: var(--color-gray-700);
+    font-size: 0.9rem;
+  }
+
+  .result-amount {
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: var(--color-primary);
+  }
+
+  .calculator-recommendation {
+    margin-top: 0.9rem;
+    padding: 0.85rem;
+    border-radius: var(--border-radius);
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .recommend-title {
+    margin: 0 0 0.25rem;
+    font-size: 0.9rem;
+    color: var(--color-gray-800);
+  }
+
+  .recommend-copy {
+    margin: 0;
+    font-size: 0.84rem;
+    color: var(--color-gray-600);
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .calculator-results {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-grid {
+      gap: 1.4rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .pricing-section {
+      padding: 3rem 0;
+    }
+    
+    .pricing-card.popular {
+      transform: none;
+    }
+    
+    .pricing-card {
+      padding: 1.2rem;
+    }
+  }
+</style>

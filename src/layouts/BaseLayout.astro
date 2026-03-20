@@ -1,0 +1,562 @@
+---
+// BaseLayout.astro - The foundation for all pages
+// Handles SEO, fonts, global styles, and HTML structure
+
+interface Props {
+  title: string;              // Page title (e.g., "Building Connected Africa")
+  description: string;        // Meta description for SEO
+  image?: string;             // OG/Twitter image (defaults to /images/og-default.png)
+  canonical?: string;         // Canonical URL for SEO
+  noIndex?: boolean;          // Add noindex meta tag (for staging pages)
+}
+
+const { 
+  title, 
+  description, 
+  image = '/images/og-default.png', 
+  canonical,
+  noIndex = false 
+} = Astro.props;
+
+const siteUrl = 'https://cloudbridge.network';
+const currentUrl = canonical || Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en-KE">
+  <head>
+    <!-- Character encoding & viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title} | CloudBridge Networks</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={currentUrl} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, siteUrl).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_KE" />
+    <meta property="og:site_name" content="CloudBridge Networks" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, siteUrl).href} />
+    <meta name="twitter:site" content="@cloudbridgeke" />
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    
+    <!-- Preconnect for Performance (Critical for African internet speeds) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Fonts: Inter (Modern, clean, loads fast) -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" 
+      rel="stylesheet" 
+    />
+    
+    <!-- Structured Data (Schema.org for Google Rich Results) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CloudBridge Networks",
+      "url": siteUrl,
+      "logo": `${siteUrl}/images/logo.png`,
+      "description": description,
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Zachariah Omwenga Evans"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+254-742-939-094",
+        "contactType": "customer service",
+        "areaServed": ["KE", "UG", "TZ", "RW"],
+        "availableLanguage": ["English", "Swahili"]
+      },
+      "sameAs": [
+        "https://twitter.com/cloudbridgeke",
+        "https://linkedin.com/company/cloudbridge-networks"
+      ]
+    })} />
+    
+    <!-- Security Headers (via meta for static hosting) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  </head>
+  
+
+    <body>
+      <!-- Main content slot (pages inject their content here) -->
+      <slot />
+
+      <!-- Section Reveal Animation Script -->
+      <script>
+        // Section reveal animation
+        const revealSections = document.querySelectorAll('section, .reveal-section');
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('section-in-view');
+            }
+          });
+        }, { threshold: 0.15 });
+        revealSections.forEach(section => {
+          section.classList.add('section-reveal');
+          revealObserver.observe(section);
+        });
+      </script>
+    </body>
+  </html>
+
+<style is:global>
+  /* ──────────────────────────────────────────────────────────────────
+     DARK MODE SUPPORT
+     ────────────────────────────────────────────────────────────────── */
+  :root {
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+    --color-primary: #60a5fa;
+    --color-primary-light: #93c5fd;
+    --color-secondary: #fb923c;
+    --color-accent: #34d399;
+    --color-dark: #f1f5f9;
+    --color-gray-50: #18181b;
+    --color-gray-100: #27272a;
+    --color-gray-200: #3f3f46;
+    --color-gray-300: #52525b;
+    --color-gray-400: #71717a;
+    --color-gray-500: #a1a1aa;
+    --color-gray-600: #d4d4d8;
+    --color-gray-700: #e4e4e7;
+    --color-gray-800: #f4f4f5;
+    --color-gray-900: #fafafa;
+    background-color: #18181b;
+    color: #f1f5f9;
+  }
+
+  body {
+    background: #18181b;
+    color: #f1f5f9;
+  }
+
+  .bg-white { background: #27272a !important; color: #f1f5f9 !important; }
+  .bg-gray-50 { background: #18181b !important; }
+  .bg-primary { background: #60a5fa !important; color: #18181b !important; }
+  .text-dark { color: #f1f5f9 !important; }
+  .text-white { color: #18181b !important; }
+  .btn-primary { background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%); color: #18181b; }
+  .btn-secondary { background: #18181b; color: #60a5fa; border-color: #60a5fa; }
+  .btn-secondary:hover { background: #60a5fa; color: #18181b; }
+  }
+
+  /* Section reveal animation */
+  .section-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1); }
+  .section-in-view { opacity: 1 !important; transform: none !important; }
+  /* ──────────────────────────────────────────────────────────────────
+     GLOBAL CSS VARIABLES (Easy to theme, consistent across site)
+     ────────────────────────────────────────────────────────────────── */
+  :root {
+    /* Brand Colors - African-inspired palette */
+    --color-primary: #1e3a8a;        /* Deep blue: trust, technology */
+    --color-primary-light: #3b82f6;  /* Lighter blue: hover states */
+    --color-secondary: #f97316;      /* Orange: energy, M-Pesa vibe */
+    --color-accent: #10b981;         /* Green: success, payments */
+    --color-dark: #0f172a;           /* Navy: professionalism */
+    
+    /* Grayscale */
+    --color-gray-50: #f8fafc;
+    --color-gray-100: #f1f5f9;
+    --color-gray-200: #e2e8f0;
+    --color-gray-300: #cbd5e1;
+    --color-gray-400: #94a3b8;
+    --color-gray-500: #64748b;
+    --color-gray-600: #475569;
+    --color-gray-700: #334155;
+    --color-gray-800: #1e293b;
+    --color-gray-900: #0f172a;
+    
+    /* Typography */
+    --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+    
+    /* Spacing & Layout */
+    --container-max: 1280px;
+    --section-padding: 5rem;
+    --border-radius: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     RESET & BASE STYLES
+     ────────────────────────────────────────────────────────────────── */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: var(--font-size-base);
+  }
+  
+  body {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    line-height: var(--line-height-base);
+    color: var(--color-gray-900);
+    background-color: #ffffff;
+    overflow-x: hidden;
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     TYPOGRAPHY
+     ────────────────────────────────────────────────────────────────── */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+  }
+  
+  h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3rem); }
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+  h4 { font-size: 1.25rem; }
+  
+  p {
+    margin-bottom: 1.5rem;
+    color: var(--color-gray-600);
+  }
+  
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  a:hover {
+    color: var(--color-primary-light);
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     CONTAINER & LAYOUT UTILITIES
+     ────────────────────────────────────────────────────────────────── */
+  .container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  section {
+    padding: var(--section-padding) 0;
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     BUTTONS
+     ────────────────────────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  .btn-secondary {
+    background: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: white;
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  
+  .btn-outline:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: white;
+  }
+  
+  .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+  }
+  
+  .btn-full {
+    width: 100%;
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     UTILITY CLASSES (Quick styling without writing CSS)
+     ────────────────────────────────────────────────────────────────── */
+  .text-center { text-align: center; }
+  .text-left { text-align: left; }
+  .text-right { text-align: right; }
+  
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .text-accent { color: var(--color-accent); }
+  .text-dark { color: var(--color-dark); }
+  .text-gray { color: var(--color-gray-600); }
+  .text-white { color: white; }
+  
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-accent { background-color: var(--color-accent); }
+  .bg-gray-50 { background-color: var(--color-gray-50); }
+  .bg-gray-100 { background-color: var(--color-gray-100); }
+  .bg-white { background-color: white; }
+  
+  .mb-0 { margin-bottom: 0; }
+  .mb-2 { margin-bottom: 0.5rem; }
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+  .mb-8 { margin-bottom: 2rem; }
+  .mb-12 { margin-bottom: 3rem; }
+  
+  .mt-2 { margin-top: 0.5rem; }
+  .mt-4 { margin-top: 1rem; }
+  .mt-8 { margin-top: 2rem; }
+  
+  .flex { display: flex; }
+  .flex-col { flex-direction: column; }
+  .items-center { align-items: center; }
+  .justify-center { justify-content: center; }
+  .justify-between { justify-content: space-between; }
+  .gap-2 { gap: 0.5rem; }
+  .gap-4 { gap: 1rem; }
+  .gap-6 { gap: 1.5rem; }
+  .gap-8 { gap: 2rem; }
+  
+  .grid { display: grid; }
+  .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  
+  .hidden { display: none; }
+  .block { display: block; }
+  .inline-block { display: inline-block; }
+  
+  .rounded { border-radius: var(--border-radius); }
+  .rounded-lg { border-radius: var(--border-radius-lg); }
+  
+  .shadow { box-shadow: var(--shadow); }
+  .shadow-md { box-shadow: var(--shadow-md); }
+  .shadow-lg { box-shadow: var(--shadow-lg); }
+  
+  .p-4 { padding: 1rem; }
+  .p-6 { padding: 1.5rem; }
+  .p-8 { padding: 2rem; }
+  
+  .max-w-2xl { max-width: 42rem; }
+  .max-w-3xl { max-width: 48rem; }
+  .max-w-4xl { max-width: 56rem; }
+  .max-w-5xl { max-width: 64rem; }
+  .max-w-6xl { max-width: 72rem; }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     FORM STYLES (For waitlist form, contact, etc.)
+     ────────────────────────────────────────────────────────────────── */
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-700);
+    margin-bottom: 0.25rem;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius);
+    background-color: white;
+    transition: var(--transition);
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: var(--color-gray-400);
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     ANIMATIONS & TRANSITIONS
+     ────────────────────────────────────────────────────────────────── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     RESPONSIVE DESIGN (Mobile-First)
+     ────────────────────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    :root {
+      --section-padding: 3rem;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .grid-cols-2,
+    .grid-cols-3 {
+      grid-template-columns: 1fr;
+    }
+    
+    .hidden-mobile {
+      display: none;
+    }
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .hidden-desktop {
+      display: none;
+    }
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     ACCESSIBILITY (Focus states for keyboard navigation)
+     ────────────────────────────────────────────────────────────────── */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Skip link for keyboard users */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
+  
+  /* ──────────────────────────────────────────────────────────────────
+     PRINT STYLES (For invoices, receipts if needed later)
+     ────────────────────────────────────────────────────────────────── */
+  @media print {
+    body {
+      background: white;
+      color: black;
+      font-size: 12pt;
+    }
+    
+    .no-print {
+      display: none !important;
+    }
+  }
+</style>
