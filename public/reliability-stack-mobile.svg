@@ -1,0 +1,41 @@
+<svg width="900" height="1280" viewBox="0 0 900 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1280" fill="white"/>
+  <rect x="36" y="36" width="828" height="1208" rx="8" fill="white" stroke="#0A0A0A" stroke-width="4"/>
+  <rect x="72" y="74" width="182" height="46" rx="4" fill="#0A0A0A"/>
+  <text x="94" y="104" fill="white" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">How we operate</text>
+  <text x="72" y="174" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">The operating layer</text>
+  <text x="72" y="228" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">stays connected.</text>
+  <text x="72" y="270" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="24">Rollout, billing, monitoring, and support</text>
+  <text x="72" y="302" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="24">stay tied to the live network.</text>
+  <rect x="72" y="360" width="756" height="190" rx="8" fill="#FAFAFA" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="108" y="404" fill="#0F6FFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">01</text>
+  <text x="108" y="444" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Plan the site</text>
+  <text x="108" y="482" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">Review the location, size the link,</text>
+  <text x="108" y="512" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">map coverage, and place equipment</text>
+  <text x="108" y="542" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">before deployment.</text>
+  <circle cx="730" cy="456" r="34" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M704 482L756 430" stroke="#0F6FFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M450 550V606" stroke="#0F6FFF" stroke-width="4"/>
+  <rect x="72" y="606" width="756" height="190" rx="8" fill="#FAFAFA" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="108" y="650" fill="#0F6FFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">02</text>
+  <text x="108" y="690" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Run the service</text>
+  <text x="108" y="728" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">Handle billing, accounts, access rules,</text>
+  <text x="108" y="758" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">and service workflows as part of the</text>
+  <text x="108" y="788" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">operating stack.</text>
+  <rect x="686" y="664" width="84" height="56" rx="4" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M728 664V720" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M686 692H770" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M450 796V852" stroke="#0F6FFF" stroke-width="4"/>
+  <rect x="72" y="852" width="756" height="190" rx="8" fill="#FAFAFA" stroke="#0A0A0A" stroke-width="3"/>
+  <text x="108" y="896" fill="#0F6FFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">03</text>
+  <text x="108" y="936" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Keep it reliable</text>
+  <text x="108" y="974" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">Monitor the site, respond to issues,</text>
+  <text x="108" y="1004" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">and support continuity after the</text>
+  <text x="108" y="1034" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="22">installation is complete.</text>
+  <path d="M676 936H780" stroke="#0F6FFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M710 904L676 936L710 968" stroke="#0F6FFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M746 904L780 936L746 968" stroke="#0F6FFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="72" y="1096" width="756" height="100" rx="8" fill="#0A0A0A"/>
+  <text x="104" y="1150" fill="white" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">The network stays usable because the</text>
+  <text x="104" y="1184" fill="white" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">operating layer does not get left behind.</text>
+</svg>

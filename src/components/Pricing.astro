@@ -1,666 +1,273 @@
 ---
-// Pricing.astro - Professional pricing section
 ---
 
-<section class="pricing-section" id="pricing">
+<section id="operations" class="section-surface">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Transparent Pricing For Every Stage</h2>
-      <p class="section-subtitle">
-        Built for operators who need predictable economics, fast deployment, and room to scale.
+    <div class="section-heading">
+      <p class="eyebrow">Operations</p>
+      <h2>We handle more than the link.</h2>
+      <p>
+        The work can include rollout, billing, access management, monitoring, and support,
+        depending on how the site needs to run.
       </p>
     </div>
 
-    <div class="pricing-highlights" aria-label="Pricing highlights">
-      <span class="highlight-pill">No setup fees</span>
-      <span class="highlight-pill">Commission-only model with monthly floor</span>
-      <span class="highlight-pill">Scale from 1 site to enterprise network</span>
-    </div>
-
-    <div class="pricing-grid">
-      <article class="pricing-card">
-        <div class="pricing-header">
-          <p class="plan-chip">Launch</p>
-          <h3 class="plan-name">Starter</h3>
-          <p class="plan-tagline">For new deployments</p>
-        </div>
-        <div class="pricing-price">
-          <span class="price-percentage">3%</span>
-          <span class="price-label">of monthly sales</span>
-          <p class="price-minimum">Minimum: <strong>KES 499 / month</strong></p>
-        </div>
-        <ul class="plan-features">
-          <li><span class="check-icon" aria-hidden="true">✓</span>2 routers</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>500 active users</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>M-Pesa billing</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Core dashboard</li>
-        </ul>
-        <a href="/contact" class="btn btn-outline btn-full">Start a Conversation</a>
-        <p class="plan-note">Break-even at about KES 16,667 monthly sales</p>
+    <div class="focus-grid">
+      <article class="card focus-card">
+        <p class="focus-index">01</p>
+        <h3>Hospitals and clinics</h3>
+        <p>Reliable connectivity for clinical work, reporting, staff coordination, and core facility operations.</p>
       </article>
 
-      <article class="pricing-card popular">
-        <div class="popular-badge">Recommended</div>
-        <div class="pricing-header">
-          <p class="plan-chip">Scale</p>
-          <h3 class="plan-name">Growing</h3>
-          <p class="plan-tagline">For scaling operators</p>
-        </div>
-        <div class="pricing-price">
-          <span class="price-percentage">2.5%</span>
-          <span class="price-label">of monthly sales</span>
-          <p class="price-minimum">Minimum: <strong>KES 1,499 / month</strong></p>
-        </div>
-        <ul class="plan-features">
-          <li><span class="check-icon" aria-hidden="true">✓</span>10 routers</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Unlimited users</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Advanced analytics</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Priority support</li>
-        </ul>
-        <a href="/contact" class="btn btn-primary btn-full">Choose Growing</a>
-        <p class="plan-note">Most selected plan for multi-location hotspot operators</p>
+      <article class="card focus-card">
+        <p class="focus-index">02</p>
+        <h3>Businesses and institutions</h3>
+        <p>Satellite-backed service, branch connectivity, billing workflows, and managed operations support.</p>
       </article>
 
-      <article class="pricing-card">
-        <div class="pricing-header">
-          <p class="plan-chip">Enterprise</p>
-          <h3 class="plan-name">Enterprise</h3>
-          <p class="plan-tagline">For multi-site infrastructure</p>
-        </div>
-        <div class="pricing-price">
-          <span class="price-percentage">2%</span>
-          <span class="price-label">of monthly sales</span>
-          <p class="price-minimum">Minimum: <strong>KES 4,999 / month</strong></p>
-        </div>
-        <ul class="plan-features">
-          <li><span class="check-icon" aria-hidden="true">✓</span>Unlimited routers</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>White-label portal</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>API access</li>
-          <li><span class="check-icon" aria-hidden="true">✓</span>Dedicated support</li>
-        </ul>
-        <a href="/contact" class="btn btn-outline btn-full">Request Enterprise Plan</a>
-        <p class="plan-note">Break-even at about KES 250,000 monthly sales</p>
+      <article class="card focus-card">
+        <p class="focus-index">03</p>
+        <h3>Remote and community sites</h3>
+        <p>Deployments in underserved areas where the internet stack needs to be practical and self-sustaining.</p>
       </article>
     </div>
 
-  </div>
-
-  <div class="pricing-calculator-edge">
-    <div class="pricing-calculator">
-      <div class="calculator-header">
-        <h3>Estimate Monthly Platform Cost</h3>
-        <p>Model your expected sales and instantly see the most cost-effective package.</p>
+    <div class="approach-grid">
+      <div class="card approach-card">
+        <p class="eyebrow">What we handle</p>
+        <h3>The operating layer can sit with us.</h3>
+        <ul class="approach-list">
+          <li>Site review and connectivity planning</li>
+          <li>Satellite equipment and edge placement</li>
+          <li>Internal distribution across the site</li>
+          <li>Billing, access workflows, and monitoring</li>
+          <li>Practical support and continuity planning</li>
+        </ul>
       </div>
-      <div class="calculator-content">
-        <div class="calculator-input">
-          <label for="sales-input">Projected Monthly Sales (KES)</label>
-          <input type="number" id="sales-input" placeholder="50000" min="0" class="calculator-field" inputmode="numeric" />
+
+      <div class="approach-visual card" aria-label="CloudBridge operating model">
+        <div class="approach-visual-header">
+          <p class="eyebrow">Operating layer</p>
+          <h3>Planning, service control, and support stay connected to the network.</h3>
         </div>
 
-        <div class="calculator-presets" aria-label="Quick sales presets">
-          <button type="button" class="preset-btn" data-sales="20000">KES 20K</button>
-          <button type="button" class="preset-btn" data-sales="50000">KES 50K</button>
-          <button type="button" class="preset-btn" data-sales="100000">KES 100K</button>
-          <button type="button" class="preset-btn" data-sales="250000">KES 250K</button>
+        <div class="approach-stage-grid">
+          <article class="approach-stage">
+            <div class="approach-stage-top">
+              <p class="approach-stage-index">01</p>
+              <p class="approach-stage-label">Planning layer</p>
+            </div>
+            <h3>Plan the site</h3>
+            <p>Review location, size the link, map coverage, and place equipment before deployment.</p>
+            <div class="approach-stage-rows">
+              <div>
+                <span>Includes</span>
+                <strong>Link sizing and coverage map</strong>
+              </div>
+              <div>
+                <span>Sets up</span>
+                <strong>Deployment decisions</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="approach-stage">
+            <div class="approach-stage-top">
+              <p class="approach-stage-index">02</p>
+              <p class="approach-stage-label">Service layer</p>
+            </div>
+            <h3>Run the service</h3>
+            <p>Handle billing, access rules, accounts, and daily workflows as part of the operating stack.</p>
+            <div class="approach-stage-rows">
+              <div>
+                <span>Handles</span>
+                <strong>Accounts and access rules</strong>
+              </div>
+              <div>
+                <span>Keeps</span>
+                <strong>Billing tied to live usage</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="approach-stage">
+            <div class="approach-stage-top">
+              <p class="approach-stage-index">03</p>
+              <p class="approach-stage-label">Continuity layer</p>
+            </div>
+            <h3>Keep it reliable</h3>
+            <p>Monitor the site, respond to issues, and support continuity once the network is live.</p>
+            <div class="approach-stage-rows">
+              <div>
+                <span>Tracks</span>
+                <strong>Service health and issues</strong>
+              </div>
+              <div>
+                <span>Protects</span>
+                <strong>Day-to-day uptime</strong>
+              </div>
+            </div>
+          </article>
         </div>
 
-        <div class="calculator-results" id="calculator-results">
-          <div class="result-card" data-plan="Starter">
-            <span class="result-plan">Starter</span>
-            <span class="result-amount" id="starter-cost">KES 499</span>
-          </div>
-          <div class="result-card" data-plan="Growing">
-            <span class="result-plan">Growing</span>
-            <span class="result-amount" id="growing-cost">KES 1,499</span>
-          </div>
-          <div class="result-card" data-plan="Enterprise">
-            <span class="result-plan">Enterprise</span>
-            <span class="result-amount" id="enterprise-cost">KES 4,999</span>
-          </div>
-        </div>
-
-        <div class="calculator-recommendation" id="calculator-recommendation" aria-live="polite">
-          <p class="recommend-title">Best Plan Right Now: <strong id="recommended-plan">Starter</strong></p>
-          <p class="recommend-copy" id="recommended-saving">Most cost-effective at your current projected sales.</p>
-        </div>
+        <p class="approach-summary">
+          The network stays usable because the operating layer does not get left behind.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  // Pricing Calculator Logic
-  const salesInput = document.getElementById('sales-input');
-  const starterCost = document.getElementById('starter-cost');
-  const growingCost = document.getElementById('growing-cost');
-  const enterpriseCost = document.getElementById('enterprise-cost');
-  const recommendedPlan = document.getElementById('recommended-plan');
-  const recommendedSaving = document.getElementById('recommended-saving');
-  const resultCards = document.querySelectorAll('.result-card');
-  const presetButtons = document.querySelectorAll('.preset-btn');
-  
-  function calculateCost(sales, rate, minimum) {
-    const commission = sales * rate;
-    return Math.max(minimum, commission);
-  }
-  
-  function formatCurrency(amount) {
-    return 'KES ' + amount.toLocaleString('en-KE', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-  }
-  
-  function updateCalculator() {
-    const sales = parseFloat(salesInput.value) || 0;
-    
-    // Starter: 3%, min 499
-    const starterTotal = calculateCost(sales, 0.03, 499);
-    starterCost.textContent = formatCurrency(starterTotal);
-    
-    // Growing: 2.5%, min 1499
-    const growingTotal = calculateCost(sales, 0.025, 1499);
-    growingCost.textContent = formatCurrency(growingTotal);
-    
-    // Enterprise: 2%, min 4999
-    const enterpriseTotal = calculateCost(sales, 0.02, 4999);
-    enterpriseCost.textContent = formatCurrency(enterpriseTotal);
-
-    const totals = [
-      { plan: 'Starter', total: starterTotal },
-      { plan: 'Growing', total: growingTotal },
-      { plan: 'Enterprise', total: enterpriseTotal }
-    ].sort((a, b) => a.total - b.total);
-
-    const best = totals[0];
-    const second = totals[1];
-    const savings = Math.max(0, second.total - best.total);
-
-    if (recommendedPlan) {
-      recommendedPlan.textContent = best.plan;
-    }
-
-    if (recommendedSaving) {
-      if (savings > 0) {
-        recommendedSaving.textContent = `Saves about ${formatCurrency(savings)} per month compared to ${second.plan} at this sales level.`;
-      } else {
-        recommendedSaving.textContent = 'All plans currently cost the same at this sales level.';
-      }
-    }
-
-    resultCards.forEach((card) => {
-      const isBest = card.getAttribute('data-plan') === best.plan;
-      card.classList.toggle('result-best', isBest);
-    });
-  }
-  
-  if (salesInput) {
-    salesInput.addEventListener('input', updateCalculator);
-  }
-
-  presetButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const value = btn.getAttribute('data-sales');
-      if (!salesInput || !value) return;
-      salesInput.value = value;
-      updateCalculator();
-    });
-  });
-
-  updateCalculator();
-</script>
-
 <style>
-  /* Pricing layout */
-  .pricing-section {
-    padding: 4.5rem 0;
-    background: var(--color-gray-50);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .pricing-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 10% 0%, rgba(59, 130, 246, 0.08), transparent 45%);
-    pointer-events: none;
-  }
-
-  .section-header {
-    text-align: center;
-    max-width: 760px;
-    margin: 0 auto 2.5rem;
-  }
-
-  .section-title {
-    margin-bottom: 0.75rem;
-  }
-
-  .section-subtitle {
-    font-size: 1rem;
-    color: var(--color-gray-600);
-    margin-bottom: 0;
-  }
-
-  .pricing-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .highlight-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.34rem 0.65rem;
-    border-radius: 999px;
-    border: 1px solid var(--color-gray-300);
-    background: white;
-    color: var(--color-gray-700);
-    font-size: 0.76rem;
-    font-weight: 600;
-  }
-
-  /* Pricing grid */
-  .pricing-grid {
+  .focus-grid,
+  .approach-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-bottom: 2rem;
-    align-items: stretch;
-    position: relative;
-    z-index: 1;
-    scroll-snap-type: none;
+    gap: var(--space-16);
   }
 
-  /* Pricing card */
-  .pricing-card {
-    background: white;
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-lg);
-    padding: 1.25rem;
-    position: relative;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    backdrop-filter: blur(2px);
+  .focus-card,
+  .approach-card,
+  .approach-visual {
+    padding: var(--space-24);
   }
 
-  .pricing-card:hover {
-    border-color: var(--color-primary-light);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+  .focus-card {
+    background: var(--color-surface-strong);
   }
 
-  .pricing-card.popular {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
-  }
-
-  .popular-badge {
-    position: absolute;
-    top: -11px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-primary);
-    color: white;
-    padding: 0.3rem 0.85rem;
-    border-radius: 2rem;
-    font-size: 0.72rem;
+  .focus-index,
+  .approach-stage-index {
+    margin-bottom: var(--space-12);
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: var(--color-subtle);
   }
 
-  .pricing-header {
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.65rem;
-    border-bottom: 1px solid var(--color-gray-200);
+  .focus-card h3,
+  .approach-card h3,
+  .approach-stage h3 {
+    margin-bottom: var(--space-12);
   }
 
-  .plan-chip {
-    margin: 0 0 0.35rem;
-    color: var(--color-primary);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 700;
+  .approach-card .eyebrow,
+  .approach-visual-header .eyebrow {
+    margin-bottom: var(--space-12);
   }
 
-  .plan-name {
-    font-size: 1.15rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .plan-tagline {
-    font-size: 0.86rem;
-    color: var(--color-gray-600);
-    margin: 0;
-  }
-
-  .pricing-price {
-    margin-bottom: 0.8rem;
-  }
-
-  .price-percentage {
-    display: block;
-    font-size: 1.9rem;
-    font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1;
-  }
-
-  .price-label {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--color-gray-600);
-    margin-top: 0.25rem;
-  }
-
-  .price-minimum {
-    margin-top: 0.5rem;
-    padding: 0.45rem 0.6rem;
-    background: var(--color-gray-50);
-    border-radius: var(--border-radius);
-    font-size: 0.82rem;
-    color: var(--color-gray-700);
-    margin-bottom: 0;
-  }
-
-  .price-minimum strong {
-    color: var(--color-primary);
-  }
-
-  .plan-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 0.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    flex-grow: 1;
-  }
-
-  .plan-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.55rem;
-    font-size: 0.82rem;
-    color: var(--color-gray-700);
-    line-height: 1.45;
-  }
-
-  .check-icon {
-    width: 18px;
-    height: 18px;
-    background: var(--color-accent);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.64rem;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .plan-note {
-    font-size: 0.74rem;
-    color: var(--color-gray-500);
-    margin-top: 0.7rem;
-    margin-bottom: 0;
-    text-align: center;
-  }
-
-  /* Pricing calculator */
-  .pricing-calculator {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-    border: 0;
-    border-radius: 0;
-    padding: 1.2rem 1rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .pricing-calculator-edge {
-    width: 100%;
-    margin-top: 1.5rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(239, 246, 255, 0.85) 100%);
-    border-top: 1px solid var(--color-gray-200);
-    border-bottom: 1px solid var(--color-gray-200);
-    position: relative;
-    z-index: 1;
-  }
-
-  .calculator-header {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .calculator-header h3 {
-    margin-bottom: 0.35rem;
-    font-size: 1.2rem;
-  }
-
-  .calculator-header p {
-    color: var(--color-gray-600);
-    margin-bottom: 0;
-    font-size: 0.92rem;
-  }
-
-  .calculator-content {
-    width: 100%;
-    max-width: none;
-  }
-
-  .calculator-input {
-    margin-bottom: 1rem;
-  }
-
-  .calculator-presets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .preset-btn {
-    border: 1px solid var(--color-gray-300);
-    background: white;
-    color: var(--color-gray-700);
-    border-radius: 999px;
-    padding: 0.35rem 0.7rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .preset-btn:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-
-  .calculator-input label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-    color: var(--color-gray-700);
-    font-size: 0.9rem;
-  }
-
-  .calculator-field {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    font-size: 1rem;
-    border: 1px solid var(--color-gray-300);
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-  }
-
-  .calculator-field:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  }
-
-  .calculator-results {
+  .approach-list {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
+    gap: var(--space-8);
+    margin-top: var(--space-16);
   }
 
-  .result-card {
+  .approach-visual {
+    display: grid;
+    gap: var(--space-24);
+    background: var(--color-surface);
+  }
+
+  .approach-visual-header {
+    display: grid;
+    gap: var(--space-12);
+    max-width: 680px;
+  }
+
+  .approach-visual-header h3 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  .approach-stage-grid {
+    display: grid;
+    gap: var(--space-16);
+  }
+
+  .approach-stage {
+    display: grid;
+    gap: var(--space-16);
+    min-height: 224px;
+    padding: var(--space-24);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface-strong);
+  }
+
+  .approach-stage-top {
     display: flex;
     justify-content: space-between;
+    gap: var(--space-12);
     align-items: center;
-    padding: 0.75rem 0.85rem;
-    background: var(--color-gray-50);
-    border-radius: var(--border-radius);
-    border-left: 3px solid var(--color-gray-300);
-    transition: var(--transition);
   }
 
-  .result-best {
-    border-left-color: var(--color-accent) !important;
-    background: #ecfdf5;
-    box-shadow: var(--shadow-sm);
+  .approach-stage-index {
+    margin-bottom: 0;
+    color: var(--color-accent);
   }
 
-  .result-card:nth-child(1) {
-    border-left-color: var(--color-primary);
-  }
-
-  .result-card:nth-child(2) {
-    border-left-color: var(--color-secondary);
-  }
-
-  .result-card:nth-child(3) {
-    border-left-color: var(--color-accent);
-  }
-
-  .result-plan {
+  .approach-stage-label {
+    color: var(--color-subtle);
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--color-gray-700);
-    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
-  .result-amount {
-    font-weight: 700;
-    font-size: 1.02rem;
-    color: var(--color-primary);
+  .approach-stage-rows {
+    display: grid;
+    gap: var(--space-8);
+    margin-top: auto;
   }
 
-  .calculator-recommendation {
-    margin-top: 0.9rem;
-    padding: 0.85rem;
-    border-radius: var(--border-radius);
-    background: var(--color-gray-50);
-    border: 1px solid var(--color-gray-200);
+  .approach-stage-rows div {
+    display: grid;
+    gap: var(--space-4);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
   }
 
-  .recommend-title {
-    margin: 0 0 0.25rem;
-    font-size: 0.9rem;
-    color: var(--color-gray-800);
+  .approach-stage-rows span {
+    color: var(--color-subtle);
+    font-size: 0.875rem;
   }
 
-  .recommend-copy {
-    margin: 0;
-    font-size: 0.84rem;
-    color: var(--color-gray-600);
+  .approach-stage-rows strong {
+    font-size: 0.95rem;
   }
 
-  /* Responsive */
-  @media (min-width: 768px) {
-    .pricing-highlights {
-      margin-bottom: 1.4rem;
-    }
-
-    .pricing-grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-flow: row;
-      grid-auto-columns: unset;
-      overflow: visible;
-      margin: 0 0 2rem;
-      padding: 0;
-      scroll-snap-type: none;
-    }
-    
-    .calculator-results {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .pricing-calculator {
-      padding: 1.7rem 1.5rem;
-    }
-
-    .calculator-content {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    
+  .approach-summary {
+    padding: var(--space-16) var(--space-24);
+    border-radius: var(--radius-card);
+    background: var(--color-text);
+    color: var(--color-surface);
+    font-size: 1rem;
+    font-weight: 600;
   }
 
-  @media (min-width: 980px) {
-    .plan-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 0.7rem;
-      row-gap: 0.45rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .pricing-grid {
-      gap: 1.4rem;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .pricing-section {
-      padding: 3rem 0;
+  @media (min-width: 960px) {
+    .focus-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .pricing-highlights {
-      justify-content: flex-start;
+    .approach-grid {
+      grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+      align-items: stretch;
     }
 
-    .pricing-grid {
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(78%, 1fr);
-      overflow-x: auto;
-      padding: 0.35rem 0.5rem 0.85rem;
-      margin: 0 -0.75rem 2rem;
-      column-gap: 0.85rem;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+    .approach-stage-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .pricing-grid::-webkit-scrollbar {
-      height: 8px;
+    .approach-stage-rows div {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-16);
     }
 
-    .pricing-grid::-webkit-scrollbar-thumb {
-      background: var(--color-gray-300);
-      border-radius: 999px;
-    }
-
-    .pricing-card {
-      padding: 1rem;
-      scroll-snap-align: start;
-      min-height: 100%;
-    }
-    
-    .pricing-card.popular {
-      transform: none;
-    }
-
-    .pricing-calculator-edge {
-      margin-top: 1rem;
+    .approach-stage-rows strong {
+      max-width: 13rem;
+      text-align: right;
     }
   }
 </style>

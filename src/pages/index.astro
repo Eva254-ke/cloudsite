@@ -8,180 +8,390 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Building Connected Africa"
-  description="CloudBridge Networks provides enterprise-grade WiFi billing, M-Pesa integration, and MikroTik management for hotspot operators across Africa."
+  title="Satellite-based network infrastructure across Africa"
+  description="CloudBridge Networks builds Africa's satellite-based network infrastructure for hospitals, institutions, businesses, and remote sites, including billing and operations support."
 >
   <Header />
-  
-  <main>
-    <Hero />
-    <Features />
-    <Pricing />
-    
-    <!-- Final CTA Section -->
-    <section class="final-cta" aria-labelledby="final-cta-title">
-      <div class="final-cta-card">
-        <p class="final-cta-kicker">Partnership Opportunity</p>
-        <h2 id="final-cta-title">Ready to Build With CloudBridge?</h2>
-        <p class="final-cta-copy">
-          Work with our team to plan, deploy, and operate reliable network infrastructure for
-          businesses, institutions, and communities across Africa.
-        </p>
 
-        <div class="final-cta-actions">
-          <a href="/contact" class="btn btn-primary btn-lg">Talk to Our Team</a>
-          <a href="/about" class="btn btn-secondary btn-lg">Why CloudBridge</a>
+  <main id="main">
+    <Hero />
+
+    <section id="mission">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Mission</p>
+          <h2>Internet infrastructure for the sites that keep work moving.</h2>
+          <p>
+            We build around continuity. That means looking beyond installation and making sure
+            the network, billing, and support layers can keep serving the site over time.
+          </p>
         </div>
 
-        <div class="final-cta-trust">
-          <span>Launched and operational</span>
-          <span class="trust-separator" aria-hidden="true"></span>
-          <span>Trusted by ISPs and business operators</span>
+        <div class="mission-grid">
+          <article class="card mission-card">
+            <p class="mission-index">01</p>
+            <h3>Backhaul that reaches hard sites</h3>
+            <p>Satellite links for facilities beyond the practical reach of stable terrestrial connectivity.</p>
+          </article>
+
+          <article class="card mission-card">
+            <p class="mission-index">02</p>
+            <h3>Site coverage that makes sense</h3>
+            <p>Planning for the full facility or campus, not just the link arriving at the roof.</p>
+          </article>
+
+          <article class="card mission-card">
+            <p class="mission-index">03</p>
+            <h3>Operations after deployment</h3>
+            <p>Billing, monitoring, access flows, and support so the site remains usable once it is live.</p>
+          </article>
+        </div>
+
+        <div class="mission-visual card" aria-label="CloudBridge delivery stack">
+          <div class="mission-visual-header">
+            <p class="eyebrow">Delivery stack</p>
+            <h3>One operating model from backhaul to long-term support.</h3>
+            <p>
+              Every site is planned as a working system. The link, the local network,
+              billing, and the support layer are designed to stay connected.
+            </p>
+          </div>
+
+          <div class="mission-track" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="mission-flow">
+            <article class="mission-step">
+              <div class="mission-step-top">
+                <p class="mission-step-index">01</p>
+                <p class="mission-step-label">Network layer</p>
+              </div>
+              <h3>Backhaul</h3>
+              <p>Satellite capacity for remote and underserved sites.</p>
+              <div class="mission-step-rows">
+                <div>
+                  <span>Role</span>
+                  <strong>Primary route</strong>
+                </div>
+                <div>
+                  <span>Coverage</span>
+                  <strong>Hard-to-reach locations</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="mission-step">
+              <div class="mission-step-top">
+                <p class="mission-step-index">02</p>
+                <p class="mission-step-label">Site layer</p>
+              </div>
+              <h3>Distribution</h3>
+              <p>Coverage across wards, offices, branches, campuses, and shared spaces.</p>
+              <div class="mission-step-rows">
+                <div>
+                  <span>Scope</span>
+                  <strong>Facility-wide rollout</strong>
+                </div>
+                <div>
+                  <span>Output</span>
+                  <strong>Usable local network</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="mission-step">
+              <div class="mission-step-top">
+                <p class="mission-step-index">03</p>
+                <p class="mission-step-label">Service layer</p>
+              </div>
+              <h3>Operations</h3>
+              <p>Billing, access control, monitoring, and service workflows tied to the live network.</p>
+              <div class="mission-step-rows">
+                <div>
+                  <span>Handles</span>
+                  <strong>Billing and access</strong>
+                </div>
+                <div>
+                  <span>Connects</span>
+                  <strong>Live service rules</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="mission-step">
+              <div class="mission-step-top">
+                <p class="mission-step-index">04</p>
+                <p class="mission-step-label">Support layer</p>
+              </div>
+              <h3>Support</h3>
+              <p>Continuity follow-up and practical response after the site is live.</p>
+              <div class="mission-step-rows">
+                <div>
+                  <span>Focus</span>
+                  <strong>Issue response</strong>
+                </div>
+                <div>
+                  <span>Outcome</span>
+                  <strong>Long-term continuity</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p class="mission-visual-summary">
+            One team covers infrastructure, billing, monitoring, and ongoing support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <Features />
+    <Pricing />
+
+    <section>
+      <div class="container">
+        <div class="card closing-card">
+          <div class="closing-copy">
+            <p class="eyebrow">Next step</p>
+            <h2>Tell us about the site, the location, and the uptime problem.</h2>
+            <p>
+              We can talk through a new rollout, a reliability upgrade, or a site that needs
+              satellite connectivity plus billing and operational support under one team.
+            </p>
+          </div>
+
+          <div class="closing-actions">
+            <a href="/contact" class="btn btn-primary">Start a conversation</a>
+            <a href="/about" class="btn btn-secondary">About CloudBridge</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </BaseLayout>
 
 <style>
-  .final-cta {
-    padding: 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 55%, #1d4ed8 100%);
+  .mission-grid {
+    display: grid;
+    gap: var(--space-16);
   }
 
-  .final-cta-card {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: white;
-    border-radius: 0;
-    padding: 2rem 1rem;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
+  .mission-card {
+    padding: var(--space-24);
+    background: var(--color-surface);
   }
 
-  .final-cta-card::after {
-    content: '';
-    position: absolute;
-    top: -35%;
-    right: -15%;
-    width: 240px;
-    height: 240px;
-    border-radius: 999px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 65%);
-    pointer-events: none;
-  }
-
-  .final-cta-kicker {
-    margin: 0 0 0.45rem;
+  .mission-index {
+    margin-bottom: var(--space-12);
     font-size: 0.75rem;
+    font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.84);
+    color: var(--color-subtle);
   }
 
-  .final-cta-card h2 {
-    color: white;
-    margin-bottom: 0.6rem;
-    font-size: 1.65rem;
-    line-height: 1.2;
+  .mission-card h3 {
+    margin-bottom: var(--space-12);
   }
 
-  .final-cta-copy {
-    margin: 0;
-    max-width: 740px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.98rem;
-    line-height: 1.6;
-  }
-
-  .final-cta-actions {
-    margin-top: 1.1rem;
+  .mission-visual {
+    margin-top: var(--space-32);
+    padding: var(--space-24);
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
-    max-width: 100%;
+    gap: var(--space-24);
+    background: var(--color-surface);
   }
 
-  .final-cta-actions .btn-primary {
-    background: white;
-    color: var(--color-primary);
-    border: none;
+  .mission-visual-header {
+    display: grid;
+    gap: var(--space-12);
+    max-width: 760px;
   }
 
-  .final-cta-actions .btn-primary:hover {
-    background: var(--color-gray-100);
-    color: var(--color-primary);
+  .mission-visual-header h3 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.08;
   }
 
-  .final-cta-actions .btn-secondary {
-    background: transparent;
-    color: white;
-    border-color: rgba(255, 255, 255, 0.7);
+  .mission-track {
+    display: none;
+    position: relative;
+    height: 20px;
   }
 
-  .final-cta-actions .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: white;
-    border-color: white;
+  .mission-track::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-border-strong);
   }
 
-  .final-cta-trust {
-    margin-top: 1rem;
+  .mission-track span {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 4px solid var(--color-accent);
+    border-radius: 50%;
+    background: var(--color-surface);
+    transform: translateX(-50%);
+  }
+
+  .mission-track span:nth-child(1) {
+    left: 12.5%;
+  }
+
+  .mission-track span:nth-child(2) {
+    left: 37.5%;
+  }
+
+  .mission-track span:nth-child(3) {
+    left: 62.5%;
+  }
+
+  .mission-track span:nth-child(4) {
+    left: 87.5%;
+  }
+
+  .mission-flow {
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .mission-step {
+    display: grid;
+    gap: var(--space-16);
+    padding: var(--space-24);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface-strong);
+  }
+
+  .mission-step-top {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .mission-step-index {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .mission-step-label {
+    color: var(--color-subtle);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mission-step h3 {
+    margin-bottom: var(--space-8);
+    font-size: 1.25rem;
+  }
+
+  .mission-step-rows {
+    display: grid;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+  }
+
+  .mission-step-rows div {
+    display: grid;
+    gap: var(--space-4);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mission-step-rows span {
+    color: var(--color-subtle);
+    font-size: 0.875rem;
+  }
+
+  .mission-step-rows strong {
+    font-size: 0.95rem;
+  }
+
+  .mission-visual-summary {
+    padding: var(--space-16) var(--space-24);
+    border-radius: var(--radius-card);
+    background: var(--color-text);
+    color: var(--color-surface);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .closing-card {
+    display: grid;
+    gap: var(--space-24);
+    padding: var(--space-32);
+  }
+
+  .closing-copy .eyebrow {
+    margin-bottom: var(--space-12);
+  }
+
+  .closing-copy h2 {
+    margin-bottom: var(--space-16);
+  }
+
+  .closing-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
-    align-items: center;
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.82);
+    gap: var(--space-12);
   }
 
-  .trust-separator {
-    width: 4px;
-    height: 4px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.7);
-  }
-
-  @media (min-width: 768px) {
-    .final-cta {
-      padding: 0;
+  @media (min-width: 900px) {
+    .mission-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .final-cta-card {
-      padding: 3.2rem 1.5rem;
-      text-align: center;
+    .mission-track {
+      display: block;
     }
 
-    .final-cta-copy {
-      margin: 0 auto;
-      font-size: 1.05rem;
+    .mission-step {
+      min-height: 250px;
     }
 
-    .final-cta-actions {
-      margin: 1.35rem auto 0;
-      grid-template-columns: auto auto;
-      justify-content: center;
-      max-width: none;
+    .mission-step-rows div {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-16);
     }
 
-    .final-cta-actions .btn {
-      min-width: 200px;
+    .mission-step-rows strong {
+      max-width: 14rem;
+      text-align: right;
     }
 
-    .final-cta-trust {
-      justify-content: center;
-      margin-top: 1.2rem;
+    .closing-card {
+      grid-template-columns: minmax(0, 1.45fr) auto;
+      align-items: center;
+    }
+
+    .closing-actions {
+      justify-content: flex-end;
     }
   }
 
-  @media (min-width: 1100px) {
-    .final-cta-card {
-      padding: 3.5rem 2rem;
+  @media (min-width: 1180px) {
+    .mission-flow {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 </style>

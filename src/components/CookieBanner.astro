@@ -1,0 +1,138 @@
+---
+---
+
+<div class="cookie-banner card" data-cookie-banner hidden>
+  <div class="cookie-copy">
+    <p class="eyebrow">Cookies</p>
+    <p class="cookie-title">We use cookies to remember your preferences and support basic site functions.</p>
+    <p class="cookie-text">
+      You can accept all cookies or keep only the necessary ones. Read the
+      <a href="/cookies">cookies policy</a>.
+    </p>
+  </div>
+
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-secondary" data-cookie-choice="necessary">
+      Only necessary
+    </button>
+    <button type="button" class="btn btn-primary" data-cookie-choice="accepted">
+      Accept cookies
+    </button>
+  </div>
+</div>
+
+<script>
+  const banner = document.querySelector('[data-cookie-banner]');
+  const consentName = 'cb_cookie_consent';
+  const consentStorageKey = 'cb_cookie_consent';
+
+  const getConsent = () => {
+    const row = document.cookie
+      .split('; ')
+      .find((entry) => entry.startsWith(`${consentName}=`));
+
+    if (row) {
+      return row.split('=')[1];
+    }
+
+    try {
+      return window.localStorage.getItem(consentStorageKey) || '';
+    } catch {
+      return '';
+    }
+  };
+
+  const hideBanner = () => {
+    if (banner instanceof HTMLElement) {
+      banner.hidden = true;
+      banner.setAttribute('aria-hidden', 'true');
+      banner.remove();
+    }
+  };
+
+  const setConsent = (value) => {
+    const secureFlag = window.location.protocol === 'https:' ? '; Secure' : '';
+    document.cookie = `${consentName}=${value}; Max-Age=31536000; Path=/; SameSite=Lax${secureFlag}`;
+
+    try {
+      window.localStorage.setItem(consentStorageKey, value);
+    } catch {
+      // Ignore storage errors and still hide the banner for the current page view.
+    }
+
+    hideBanner();
+  };
+
+  if (banner instanceof HTMLElement && !getConsent()) {
+    banner.hidden = false;
+    banner.setAttribute('aria-hidden', 'false');
+
+    banner.addEventListener('click', (event) => {
+      const target = event.target instanceof Element
+        ? event.target.closest('[data-cookie-choice]')
+        : null;
+
+      if (!(target instanceof HTMLElement)) {
+        return;
+      }
+
+      event.preventDefault();
+      const value = target.getAttribute('data-cookie-choice') || 'necessary';
+      setConsent(value);
+    });
+  } else {
+    hideBanner();
+  }
+</script>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    right: var(--space-16);
+    bottom: var(--space-16);
+    z-index: 30;
+    display: grid;
+    gap: var(--space-16);
+    width: min(440px, calc(100vw - 32px));
+    padding: var(--space-24);
+    background: var(--color-surface);
+  }
+
+  .cookie-copy {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .cookie-title {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .cookie-text {
+    font-size: 0.95rem;
+  }
+
+  .cookie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+  }
+
+  .cookie-actions .btn {
+    min-height: 40px;
+  }
+
+  @media (max-width: 767px) {
+    .cookie-banner {
+      left: var(--space-16);
+      right: var(--space-16);
+      width: auto;
+      padding: var(--space-16);
+    }
+
+    .cookie-actions {
+      display: grid;
+    }
+  }
+</style>

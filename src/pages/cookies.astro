@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Cookies Policy"
+  description="Read how CloudBridge Networks uses cookies on this website and how consent choices are stored."
+  canonical="https://cloudbridge.network/cookies"
+>
+  <Header />
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <div class="page-heading">
+          <p class="eyebrow">Cookies policy</p>
+          <h1>How this website uses cookies.</h1>
+          <p>
+            This page explains what cookies CloudBridge Networks uses on this website,
+            what they do, and how your consent choice is stored.
+          </p>
+        </div>
+
+        <div class="policy-grid">
+          <article class="card policy-card">
+            <h2>What we use today</h2>
+            <p>
+              This website currently uses a small number of cookies that support basic site
+              operation and remember your cookie preference.
+            </p>
+
+            <div class="policy-table">
+              <div class="policy-row">
+                <p class="policy-label">Cookie</p>
+                <p><code>cb_cookie_consent</code></p>
+              </div>
+              <div class="policy-row">
+                <p class="policy-label">Purpose</p>
+                <p>Remembers whether you accepted cookies or chose only necessary cookies.</p>
+              </div>
+              <div class="policy-row">
+                <p class="policy-label">Length</p>
+                <p>Stored for up to 12 months.</p>
+              </div>
+              <div class="policy-row">
+                <p class="policy-label">Type</p>
+                <p>Preference cookie.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card policy-card">
+            <h2>Necessary and optional cookies</h2>
+            <p>
+              Necessary cookies help the site function properly. Optional cookies can be used
+              for features such as analytics if they are added later.
+            </p>
+            <p>
+              CloudBridge does not currently use advertising cookies on this website.
+              If analytics or other optional tools are added later, this page and the consent
+              flow should be updated to reflect them.
+            </p>
+          </article>
+
+          <article class="card policy-card">
+            <h2>How to manage your choice</h2>
+            <p>
+              You can choose Accept cookies or Only necessary from the site banner.
+              If you want to change your choice later, clear this site's cookies in your browser
+              and reload the page.
+            </p>
+            <button type="button" class="btn btn-secondary" data-reset-cookie-consent>
+              Reset cookie choice
+            </button>
+          </article>
+
+          <article class="card policy-card">
+            <h2>Contact</h2>
+            <p>
+              If you have questions about website cookies or consent on this site,
+              contact <a href="mailto:hello@cloudbridge.network">hello@cloudbridge.network</a>.
+            </p>
+            <p class="policy-note">Last updated: April 28, 2026.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const resetButton = document.querySelector('[data-reset-cookie-consent]');
+
+  if (resetButton instanceof HTMLButtonElement) {
+    resetButton.addEventListener('click', () => {
+      document.cookie = 'cb_cookie_consent=; Max-Age=0; Path=/; SameSite=Lax';
+      try {
+        window.localStorage.removeItem('cb_cookie_consent');
+      } catch {
+        // Ignore storage errors and continue with reload.
+      }
+      window.location.reload();
+    });
+  }
+</script>
+
+<style>
+  .policy-grid {
+    display: grid;
+    gap: var(--space-16);
+  }
+
+  .policy-card {
+    padding: var(--space-24);
+  }
+
+  .policy-card h2 {
+    margin-bottom: var(--space-12);
+    font-size: 1.5rem;
+  }
+
+  .policy-card p + p {
+    margin-top: var(--space-16);
+  }
+
+  .policy-table {
+    display: grid;
+    gap: var(--space-12);
+    margin-top: var(--space-24);
+  }
+
+  .policy-row {
+    display: grid;
+    gap: var(--space-4);
+    padding-top: var(--space-12);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .policy-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+  }
+
+  .policy-note {
+    color: var(--color-subtle);
+  }
+
+  .policy-card code {
+    color: var(--color-text);
+    font-size: 0.95rem;
+  }
+
+  [data-reset-cookie-consent] {
+    margin-top: var(--space-24);
+  }
+
+  @media (min-width: 900px) {
+    .policy-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

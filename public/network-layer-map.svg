@@ -1,0 +1,39 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="white"/>
+  <rect x="72" y="72" width="1456" height="756" rx="24" fill="white" stroke="#0A0A0A" stroke-width="4"/>
+  <rect x="118" y="118" width="392" height="68" rx="8" fill="#0A0A0A"/>
+  <text x="148" y="162" fill="white" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">CloudBridge delivery stack</text>
+  <rect x="150" y="256" width="286" height="360" rx="18" fill="#F6F9FC" stroke="#0A0A0A" stroke-width="4"/>
+  <rect x="510" y="256" width="286" height="360" rx="18" fill="#F6F9FC" stroke="#0A0A0A" stroke-width="4"/>
+  <rect x="870" y="256" width="286" height="360" rx="18" fill="#F6F9FC" stroke="#0A0A0A" stroke-width="4"/>
+  <rect x="1230" y="256" width="220" height="360" rx="18" fill="#F6F9FC" stroke="#0A0A0A" stroke-width="4"/>
+  <text x="188" y="318" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Backhaul</text>
+  <text x="188" y="364" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">Satellite internet for</text>
+  <text x="188" y="396" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">hard-to-serve locations.</text>
+  <circle cx="292" cy="498" r="58" stroke="#0F6FFF" stroke-width="10"/>
+  <path d="M250 540L334 456" stroke="#0F6FFF" stroke-width="10" stroke-linecap="round"/>
+  <text x="548" y="318" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Distribution</text>
+  <text x="548" y="364" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">Networks across sites,</text>
+  <text x="548" y="396" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">campuses, and facilities.</text>
+  <rect x="586" y="454" width="132" height="108" rx="10" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M652 454V562" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M586 508H718" stroke="#0F6FFF" stroke-width="8"/>
+  <text x="908" y="318" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Operations</text>
+  <text x="908" y="364" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">Billing, access, monitoring,</text>
+  <text x="908" y="396" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">and service workflows.</text>
+  <path d="M952 510H1074" stroke="#0F6FFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M984 468L952 510L984 552" stroke="#0F6FFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1042 468L1074 510L1042 552" stroke="#0F6FFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1262" y="318" fill="#0A0A0A" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Support</text>
+  <text x="1262" y="364" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">Long-term follow-up</text>
+  <text x="1262" y="396" fill="#525252" font-family="Inter, Arial, sans-serif" font-size="23">once the site is live.</text>
+  <rect x="1268" y="462" width="144" height="92" rx="10" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M1296 490H1384" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M1296 526H1360" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M1296 562H1342" stroke="#0F6FFF" stroke-width="8"/>
+  <path d="M436 436H510" stroke="#0A0A0A" stroke-width="6" stroke-dasharray="12 12"/>
+  <path d="M796 436H870" stroke="#0A0A0A" stroke-width="6" stroke-dasharray="12 12"/>
+  <path d="M1156 436H1230" stroke="#0A0A0A" stroke-width="6" stroke-dasharray="12 12"/>
+  <rect x="150" y="676" width="1300" height="84" rx="12" fill="#0A0A0A"/>
+  <text x="194" y="728" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">One company covering infrastructure, billing, monitoring, and ongoing service.</text>
+</svg>

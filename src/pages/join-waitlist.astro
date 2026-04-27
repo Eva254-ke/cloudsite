@@ -1,404 +1,112 @@
 ---
-// join-waitlist.astro - Partnership & Launch Info
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
   title="Partner With Us"
-  description="CloudBridge Networks is now live! Partner with us to deploy next-generation connectivity and infrastructure across Africa."
-  canonical="https://cloudbridge.network/partner"
-    <section class="waitlist-section">
-      <div class="container text-center py-20">
-        <h1 class="waitlist-title mb-8">
-          CloudBridge Networks is Now Live!
-        </h1>
-        <p class="waitlist-subtitle text-xl mb-8">
-          We are actively partnering with ISPs, businesses, and communities to deliver next-generation connectivity and infrastructure across Africa.
-        </p>
-        <a href="/contact" class="btn btn-primary btn-lg">Contact Us to Partner</a>
-        <p class="mt-8 text-gray-500">No waitlist. No delays. Let’s build Africa’s digital future together.</p>
-      </div>
-    </section>
-                    class="form-input"
-                  />
-                </div>
-                
-                <div class="form-group">
-                  <label for="location">Location (City, Country) *</label>
-                  <input 
-                    type="text" 
-                    id="location" 
-                    name="location" 
-                    required
-                    placeholder="Nairobi, Kenya"
-                    class="form-input"
-                  />
-                </div>
-                
-                <div class="form-group">
-                  <label>I'm interested in: *</label>
-                  <div class="radio-group">
-                    <label class="radio-option">
-                      <input type="radio" name="interest" value="isp" required />
-                      <span class="radio-label">
-                        <strong>CloudBridge ISP</strong>
-                        <small>You install & manage for me</small>
-                      </span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="interest" value="platform" />
-                      <span class="radio-label">
-                        <strong>CloudBridge Platform</strong>
-                        <small>I install, you license software</small>
-                      </span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="interest" value="both" />
-                      <span class="radio-label">
-                        <strong>Not sure yet</strong>
-                        <small>Tell me more about both</small>
-                      </span>
-                    </label>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <label for="hotspots">
-                    How many hotspots do you plan to run? 
-                    <small class="optional-label">(Optional)</small>
-                  </label>
-                  <select id="hotspots" name="hotspots" class="form-input">
-                    <option value="">Select...</option>
-                    <option value="1">Just 1 (testing)</option>
-                    <option value="2-5">2-5 (small business)</option>
-                    <option value="6-20">6-20 (growing)</option>
-                    <option value="20+">20+ (enterprise/ISP)</option>
-                  </select>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn">
-                  Join Waitlist →
-                </button>
-                
-                <p class="privacy-note">
-                  No spam, ever. We respect your privacy.
-                </p>
-              </form>
-              
-              <!-- Success Message (Hidden by default) -->
-              <div class="success-message" id="success-message" hidden>
-                <div class="success-icon">✓</div>
-                <h2 class="success-title">You're on the list! 🎉</h2>
-                <p class="success-text">
-                  Thanks for joining the CloudBridge waitlist. 
-                  We'll email you when we launch.
-                </p>
-                <a href="/" class="btn btn-secondary">← Back to home</a>
-              </div>
-              
-            </div>
+  description="CloudBridge is operating now. Use this page if you came through an older waitlist link and want to discuss an African network infrastructure project."
+  canonical="https://cloudbridge.network/join-waitlist"
+>
+  <Header />
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <div class="page-heading">
+          <p class="eyebrow">Partner with us</p>
+          <h1>CloudBridge is already operating.</h1>
+          <p>
+            This page stays live for older waitlist links. If you need satellite-based network
+            infrastructure, billing support, or managed operations, send us the site details.
+          </p>
+        </div>
+
+        <div class="partner-grid">
+          <article class="card partner-card">
+            <h2>Infrastructure projects</h2>
+            <p>Connectivity planning for hospitals, institutions, businesses, and critical facilities.</p>
+          </article>
+
+          <article class="card partner-card">
+            <h2>Remote deployments</h2>
+            <p>Satellite-backed internet for sites where terrestrial options are weak or unavailable.</p>
+          </article>
+
+          <article class="card partner-card">
+            <h2>Billing and operations</h2>
+            <p>Support for access control, billing workflows, and the operating layer after rollout.</p>
+          </article>
+        </div>
+
+        <div class="card partner-cta">
+          <div>
+            <p class="eyebrow">Start here</p>
+            <h2>Use the contact page to send the project details.</h2>
+            <p>We can follow up on scope, site conditions, and the infrastructure or operations problem you need solved.</p>
           </div>
-          
+
+          <div class="partner-actions">
+            <a href="/contact" class="btn btn-primary">Contact the team</a>
+            <a href="/" class="btn btn-secondary">Back to home</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
-  
-  <footer class="waitlist-footer">
-    <div class="container">
-      <p>&copy; 2026 CloudBridge Networks. Nairobi, Kenya.</p>
-    </div>
-  </footer>
+
+  <Footer />
 </BaseLayout>
 
-<script>
-  const form = document.getElementById('waitlist-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const successMessage = document.getElementById('success-message');
-  
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Joining...';
-      
-      setTimeout(() => {
-        form.hidden = true;
-        successMessage.hidden = false;
-      }, 1500);
-    });
-  }
-</script>
-
 <style>
-  .waitlist-section {
-    padding: 4rem 0 6rem;
-    background: linear-gradient(180deg, var(--color-gray-50) 0%, #ffffff 100%);
-  }
-  
-  .waitlist-grid {
+  .partner-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: start;
+    gap: var(--space-16);
   }
-  
-  .waitlist-copy {
-    max-width: 500px;
+
+  .partner-card {
+    padding: var(--space-24);
   }
-  
-  .waitlist-title {
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+
+  .partner-card h2 {
+    margin-bottom: var(--space-12);
+    font-size: 1.5rem;
   }
-  
-  .waitlist-subtitle {
-    font-size: 1.125rem;
-    color: var(--color-gray-600);
-    margin-bottom: 2.5rem;
+
+  .partner-cta {
+    display: grid;
+    gap: var(--space-24);
+    margin-top: var(--space-32);
+    padding: var(--space-32);
   }
-  
-  .benefits-list {
+
+  .partner-cta .eyebrow {
+    margin-bottom: var(--space-12);
+  }
+
+  .partner-cta h2 {
+    margin-bottom: var(--space-16);
+  }
+
+  .partner-actions {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: var(--space-12);
   }
-  
-  .benefit-item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  
-  .benefit-icon {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    background: var(--color-accent);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-  
-  .benefit-item strong {
-    display: block;
-    color: var(--color-gray-900);
-    margin-bottom: 0.25rem;
-  }
-  
-  .benefit-item p {
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-    margin: 0;
-  }
-  
-  .social-proof {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-gray-200);
-  }
-  
-  .proof-avatars {
-    display: flex;
-  }
-  
-  .avatar {
-    width: 40px;
-    height: 40px;
-    background: var(--color-gray-200);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    border: 2px solid white;
-    margin-left: -10px;
-  }
-  
-  .avatar:first-child {
-    margin-left: 0;
-  }
-  
-  .avatar-more {
-    background: var(--color-primary);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-  
-  .proof-text {
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-    margin: 0;
-  }
-  
-  .proof-text strong {
-    color: var(--color-primary);
-  }
-  
-  .waitlist-form-wrapper {
-    max-width: 480px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  
-  .waitlist-form-card {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
-    padding: 2.5rem;
-    border: 1px solid var(--color-gray-200);
-  }
-  
-  .waitlist-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .form-group label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-gray-700);
-  }
-  
-  .optional-label {
-    font-weight: 400;
-    color: var(--color-gray-500);
-  }
-  
-  .form-input {
-    padding: 0.875rem 1rem;
-    font-size: 1rem;
-    border: 1.5px solid var(--color-gray-300);
-    border-radius: var(--border-radius);
-    background: white;
-    transition: var(--transition);
-  }
-  
-  .form-input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  }
-  
-  .radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .radio-option {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem;
-    border: 1.5px solid var(--color-gray-200);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-  }
-  
-  .radio-option:hover {
-    border-color: var(--color-primary);
-    background: var(--color-gray-50);
-  }
-  
-  .radio-option input[type="radio"] {
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    accent-color: var(--color-primary);
-  }
-  
-  .radio-label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  
-  .radio-label strong {
-    color: var(--color-gray-900);
-    font-size: 0.875rem;
-  }
-  
-  .radio-label small {
-    color: var(--color-gray-500);
-    font-size: 0.75rem;
-  }
-  
-  .privacy-note {
-    font-size: 0.75rem;
-    color: var(--color-gray-500);
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
-  .success-message {
-    text-align: center;
-    padding: 2rem 0;
-  }
-  
-  .success-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    background: var(--color-accent);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  
-  .success-title {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  
-  .success-text {
-    font-size: 1rem;
-    color: var(--color-gray-600);
-    margin-bottom: 2rem;
-  }
-  
-  .waitlist-footer {
-    padding: 2rem 0;
-    border-top: 1px solid var(--color-gray-200);
-    text-align: center;
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-  }
-  
-  @media (min-width: 768px) {
-    .waitlist-section {
-      padding: 6rem 0 8rem;
+
+  @media (min-width: 900px) {
+    .partner-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    
-    .waitlist-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+
+    .partner-cta {
+      grid-template-columns: minmax(0, 1.5fr) auto;
+      align-items: center;
     }
-    
-    .waitlist-copy {
-      padding-right: 2rem;
+
+    .partner-actions {
+      justify-content: flex-end;
     }
   }
 </style>

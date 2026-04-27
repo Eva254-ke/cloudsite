@@ -1,499 +1,278 @@
 ---
-// Hero.astro - Main homepage hero section
-// First impression for visitors - must be compelling and clear
 ---
 
-<section class="hero">
+<section class="hero-section section-surface">
   <div class="container">
     <div class="hero-grid">
-      
-      <!-- Left: Content -->
-      <div class="hero-content">
-        
-        <!-- Badge (Optional - for launches, announcements) -->
-        <!-- No badge: removed launch/waitlist messaging -->
-        
-        <!-- Main Headline -->
-        <h1 class="hero-title animate-fade-in-up">
-          Pioneering Africa's Digital Future<br />
-          <span class="text-primary">Infrastructure at Scale</span>
-        </h1>
-        
-        <!-- Subheadline -->
-        <p class="hero-subtitle animate-fade-in-up" style="animation-delay: 0.1s;">
-          We design, deploy, and manage next-generation internet infrastructure—leveraging Starlink and advanced wireless technologies to connect cities, towns, and rural communities across Africa. Our mission: affordable, reliable, high-speed connectivity for everyone.
+      <div class="hero-copy">
+        <p class="eyebrow">CloudBridge Networks</p>
+        <p class="hero-kicker">Satellite-backed network infrastructure across Africa.</p>
+        <h1>A reliable network needs more than a dish on the roof.</h1>
+        <p class="hero-intro">
+          CloudBridge builds and operates internet infrastructure for hospitals, institutions,
+          businesses, and remote sites that cannot depend on weak terrestrial coverage alone.
         </p>
-        
-        <!-- CTA Buttons -->
-        <div class="hero-cta animate-fade-in-up" style="animation-delay: 0.2s;">
-          <a href="/contact" class="btn btn-primary btn-lg">
-            Partner With Us
-          </a>
-          <a href="#features" class="btn btn-secondary btn-lg">
-            Our Solutions
-          </a>
+        <p class="hero-support">
+          We design the backhaul, distribute service across the site, run billing and access,
+          and stay responsible after launch.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/contact" class="btn btn-primary">Talk to our team</a>
+          <a href="/#mission" class="btn btn-secondary">Learn how we work</a>
         </div>
-        
-        <!-- Trust Indicators -->
-        <div class="hero-trust animate-fade-in-up" style="animation-delay: 0.3s;">
-          <p class="trust-text">
-            <span class="trust-icon" aria-hidden="true">✓</span>
-            Delivering connectivity in Nairobi, Mombasa, Kisumu & beyond
-          </p>
-          <div class="trust-stats">
-            <div class="stat">
-              <span class="stat-number">100+</span>
-              <span class="stat-label">Sites Deployed</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-              <span class="stat-number">99.99%</span>
-              <span class="stat-label">Network Uptime</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label">Support</span>
-            </div>
-          </div>
-        </div>
-        
+
+        <p class="hero-note">One team accountable from first survey to daily service.</p>
       </div>
-      
-      <!-- Right: Visual (Illustration/Image Placeholder) -->
-      <div class="hero-visual animate-fade-in" style="animation-delay: 0.2s;">
-        <div class="hero-image-wrapper" style="position:relative;">
-          <img
-            class="hero-image"
-            src="https://www.ookla.com/s/media/2025/04/tarlink-Impact-on-SSA-fixed-Market-Header-1200x630.jpg" 
-            alt="Starlink's Impact on Sub-Saharan Africa Fixed Market" 
-            loading="lazy"
-          />
-          <!-- Floating Cards (Decorative - shows platform features) -->
-          <div class="floating-card card-2">
-            <span class="card-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 16a11 11 0 0 1 16 0" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
-                <path d="M7.5 12.5a7 7 0 0 1 9 0" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
-                <path d="M11 19h2" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <span class="card-text">Network Operations</span>
+
+      <aside class="hero-panel card" aria-label="CloudBridge operating model">
+        <div class="hero-panel-header">
+          <div>
+            <p class="eyebrow">Operating model</p>
+            <h2 class="hero-panel-title">One delivery path from satellite link to daily support.</h2>
           </div>
-          <div class="floating-card card-3">
-            <span class="card-icon" aria-hidden="true">
-              <!-- Analytics/Bar Chart SVG -->
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="13" width="3" height="7" rx="1.5" fill="#3b82f6"/><rect x="10.5" y="9" width="3" height="11" rx="1.5" fill="#3b82f6"/><rect x="17" y="5" width="3" height="15" rx="1.5" fill="#3b82f6"/></svg>
-            </span>
-            <span class="card-text">Performance Analytics</span>
+          <p class="hero-panel-tag">Built for real sites</p>
+        </div>
+
+        <div class="hero-stage-grid">
+          <article class="hero-stage">
+            <p class="hero-stage-index">01</p>
+            <h3>Backhaul</h3>
+            <p>Satellite capacity planned around the site, location, and expected load.</p>
+          </article>
+
+          <article class="hero-stage">
+            <p class="hero-stage-index">02</p>
+            <h3>On-site network</h3>
+            <p>Coverage that extends beyond the roofline and reaches the people using the service.</p>
+          </article>
+
+          <article class="hero-stage">
+            <p class="hero-stage-index">03</p>
+            <h3>Billing and access</h3>
+            <p>Usage, account control, and service rules handled as part of the rollout.</p>
+          </article>
+
+          <article class="hero-stage">
+            <p class="hero-stage-index">04</p>
+            <h3>Ongoing operation</h3>
+            <p>Monitoring, issue response, and support after the network is live.</p>
+          </article>
+        </div>
+
+        <div class="hero-panel-footer">
+          <p class="hero-panel-label">Where we work</p>
+          <div class="hero-sector-list" aria-label="CloudBridge site types">
+            <span>Hospitals</span>
+            <span>Institutions</span>
+            <span>Business sites</span>
+            <span>Remote facilities</span>
           </div>
         </div>
-      </div>
-      
+      </aside>
     </div>
   </div>
 </section>
 
-<script>
-  // Optional: Add scroll-based animations when hero comes into view
-  // This is minimal JS for enhanced UX
-  
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      }
-    });
-  }, observerOptions);
-  
-  document.querySelectorAll('.animate-fade-in, .animate-fade-in-up').forEach(el => {
-    observer.observe(el);
-  });
-</script>
-
 <style>
-  /* ──────────────────────────────────────────────────────────────────
-     HERO SECTION LAYOUT
-     ────────────────────────────────────────────────────────────────── */
-  .hero {
-    padding: 6rem 0 4rem;
-    background-color: #f8fafc;
-    background-image:
-      linear-gradient(135deg, rgba(248, 250, 252, 0.78) 0%, rgba(255, 255, 255, 0.82) 100%),
-      url('https://img.freepik.com/premium-psd/networking-pattern-transparent-background_1022554-6517.jpg');
-    background-repeat: no-repeat, repeat;
-    background-size: cover, 420px;
-    background-position: center, center;
-    overflow: hidden;
-    position: relative;
+  .hero-section {
+    padding-top: var(--space-96);
   }
-  
+
   .hero-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: var(--space-24);
     align-items: start;
   }
-  
-  /* ──────────────────────────────────────────────────────────────────
-     HERO CONTENT (Left Side)
-     ────────────────────────────────────────────────────────────────── */
-  .hero-content {
-    max-width: 680px;
+
+  .hero-copy {
+    max-width: 780px;
   }
-  
-  /* Badge */
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, var(--color-secondary) 0%, #fb923c 100%);
-    color: white;
-    font-size: 0.875rem;
+
+  .hero-copy .eyebrow {
+    margin-bottom: var(--space-12);
+  }
+
+  .hero-kicker {
+    margin-bottom: var(--space-12);
+    color: var(--color-subtle);
+    font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 2rem;
-    margin-bottom: 1.5rem;
-    box-shadow: var(--shadow-md);
-  }
-  
-  .badge-icon {
-    font-size: 1rem;
-  }
-  
-  /* Title */
-  .hero-title {
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-  }
-  
-  /* Subtitle */
-  .hero-subtitle {
-    font-size: 1.25rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    color: var(--color-gray-600);
-  }
-  
-  /* CTA Buttons */
-  .hero-cta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 0.85rem;
-    margin-bottom: 3rem;
-    width: min(520px, 100%);
+    letter-spacing: -0.01em;
+    max-width: 520px;
   }
 
-  .hero-cta .btn {
-    width: 100%;
-  }
-  
-  .btn-icon {
-    flex-shrink: 0;
-  }
-  
-  /* Trust Indicators */
-  .hero-trust {
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-gray-200);
-  }
-  
-  .trust-text {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-    margin-bottom: 1.5rem;
-  }
-  
-  .trust-icon {
-    color: var(--color-accent);
-    font-weight: 700;
-  }
-  
-  .trust-stats {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .stat {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .stat-number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1;
-  }
-  
-  .stat-label {
-    font-size: 0.75rem;
-    color: var(--color-gray-500);
-    margin-top: 0.25rem;
-  }
-  
-  .stat-divider {
-    width: 1px;
-    height: 40px;
-    background: var(--color-gray-300);
-  }
-  
-  /* ──────────────────────────────────────────────────────────────────
-     HERO VISUAL (Right Side)
-     ────────────────────────────────────────────────────────────────── */
-  .hero-visual {
-    position: relative;
-    align-self: start;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .hero-image-wrapper {
-    position: relative;
-    width: 100%;
+  .hero-copy h1 {
+    margin-bottom: var(--space-16);
     max-width: 620px;
-    margin: 0 0 0 auto;
+    font-size: clamp(2.25rem, 4.2vw, 3.9rem);
+    line-height: 1.04;
   }
 
-  .hero-image-wrapper::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 1.5rem;
-    background: linear-gradient(to top, rgba(15, 23, 42, 0.16), transparent 40%);
-    pointer-events: none;
+  .hero-intro {
+    max-width: 560px;
+    font-size: 1rem;
+    line-height: 1.72;
   }
 
-  .hero-image {
-    width: 100%;
-    aspect-ratio: 16/10;
-    border-radius: 1.5rem;
-    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.12);
-    object-fit: cover;
+  .hero-support {
+    max-width: 560px;
+    margin-top: var(--space-16);
   }
-  
-  .hero-image-placeholder {
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    border-radius: var(--border-radius-lg);
+
+  .hero-actions {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-lg);
+    flex-wrap: wrap;
+    gap: var(--space-12);
+    margin-top: var(--space-24);
+  }
+
+  .hero-note {
+    margin-top: var(--space-32);
+    max-width: 520px;
+    font-weight: 600;
+    color: var(--color-subtle);
+  }
+
+  .hero-panel {
     overflow: hidden;
   }
-  
-  .placeholder-content {
-    text-align: center;
-    color: white;
+
+  .hero-panel-header {
+    display: grid;
+    gap: var(--space-16);
+    padding: var(--space-24);
+    border-bottom: 1px solid var(--color-border);
   }
-  
-  .placeholder-icon {
-    font-size: 4rem;
-    display: block;
-    margin-bottom: 1rem;
-    opacity: 0.9;
+
+  .hero-panel-title {
+    margin-top: var(--space-12);
+    max-width: 420px;
+    font-size: 1.5rem;
+    line-height: 1.18;
   }
-  
-  .placeholder-content p {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: white;
-  }
-  
-  .placeholder-content small {
-    font-size: 0.875rem;
-    opacity: 0.8;
-    color: white;
-  }
-  
-  /* Floating Cards (Decorative) */
-  .floating-card {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 0.65rem 0.9rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
-    display: flex;
+
+  .hero-panel-tag {
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.82rem;
+    min-height: 32px;
+    padding: 0 var(--space-12);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    color: var(--color-subtle);
+    font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-gray-700);
-    animation: float 3s ease-in-out infinite;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    z-index: 2;
   }
-  
-  .card-icon {
-    font-size: 1.25rem;
+
+  .hero-stage-grid {
+    display: grid;
+    gap: 0;
   }
-  
-  .card-2 {
-    top: 12%;
-    right: -8%;
-    animation-delay: 1s;
+
+  .hero-stage {
+    padding: var(--space-24);
+    min-height: 188px;
   }
-  
-  .card-3 {
-    bottom: 10%;
-    left: -8%;
-    animation-delay: 2s;
+
+  .hero-stage:nth-child(odd) {
+    border-right: 1px solid var(--color-border);
   }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+
+  .hero-stage:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border);
   }
-  
-  /* ──────────────────────────────────────────────────────────────────
-     ANIMATIONS (Respect user preferences)
-     ────────────────────────────────────────────────────────────────── */
-  .animate-fade-in {
-    opacity: 0;
-    animation: fadeIn 0.6s ease-out forwards;
+
+  .hero-stage-index {
+    margin-bottom: var(--space-4);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
   }
-  
-  .animate-fade-in-up {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+
+  .hero-stage h3 {
+    margin-bottom: var(--space-12);
+    font-size: 1.125rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+
+  .hero-panel-footer {
+    display: grid;
+    gap: var(--space-16);
+    padding: var(--space-24);
+    border-top: 1px solid var(--color-border);
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .hero-panel-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
   }
-  
-  @media (prefers-reduced-motion: reduce) {
-    .animate-fade-in,
-    .animate-fade-in-up,
-    .floating-card {
-      animation: none;
-      opacity: 1;
-      transform: none;
-    }
+
+  .hero-sector-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
   }
-  
-  /* ──────────────────────────────────────────────────────────────────
-     RESPONSIVE BREAKPOINTS
-     ────────────────────────────────────────────────────────────────── */
-  @media (min-width: 768px) {
-    .hero {
-      padding: 8rem 0 6rem;
-    }
-    
+
+  .hero-sector-list span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 var(--space-12);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  @media (min-width: 980px) {
     .hero-grid {
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 3rem;
+      grid-template-columns: minmax(0, 0.98fr) minmax(420px, 1.02fr);
+      gap: var(--space-32);
+      align-items: center;
     }
-    
-    .hero-subtitle {
-      font-size: 1.5rem;
+
+    .hero-section {
+      min-height: calc(100vh - 81px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-panel-header {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+    }
+
+    .hero-stage-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  
-  @media (min-width: 1024px) {
-    .hero {
-      padding: 10rem 0 8rem;
-    }
-    
-    .hero-grid {
-      gap: 4rem;
-    }
-  }
-  
+
   @media (max-width: 767px) {
-    .hero {
-      padding: 4rem 0 3rem;
-    }
-    
-    .hero-title {
-      font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.125rem;
-    }
-    
-    .hero-cta {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      width: 100%;
-    }
-    
-    .hero .btn {
-      width: auto;
-      justify-content: center;
-    }
-    
-    .trust-stats {
-      justify-content: space-between;
-    }
-    
-    .stat-divider {
-      display: none;
-    }
-    
-    .floating-card {
-      display: none; /* Hide on mobile for cleaner look */
+    .hero-section {
+      padding-top: var(--space-64);
     }
 
-    .hero-visual {
-      justify-content: center;
+    .hero-intro {
+      font-size: 1rem;
     }
 
-    .hero-image-wrapper {
-      margin: 0 auto;
-      max-width: 100%;
+    .hero-stage {
+      min-height: 0;
     }
-  }
-  
-  /* ──────────────────────────────────────────────────────────────────
-     BACKGROUND DECORATION (Subtle pattern)
-     ────────────────────────────────────────────────────────────────── */
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  
-  .hero > .container {
-    position: relative;
-    z-index: 1;
+
+    .hero-stage:nth-child(odd) {
+      border-right: 0;
+    }
+
+    .hero-stage + .hero-stage {
+      border-top: 1px solid var(--color-border);
+    }
   }
 </style>

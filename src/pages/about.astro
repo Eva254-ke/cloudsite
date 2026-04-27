@@ -1,70 +1,43 @@
 ---
-// about.astro - Company story, mission, vision
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="About Us"
-  description="CloudBridge Networks is building network infrastructure across Africa. Starlink installations, ISP technology, and connectivity for underserved communities."
+  title="About"
+  description="CloudBridge Networks builds Africa's satellite-based network infrastructure for hospitals, institutions, businesses, and remote sites."
   canonical="https://cloudbridge.network/about"
 >
   <Header />
-  
-  <main>
-    <section class="about-section">
+
+  <main id="main">
+    <section>
       <div class="container">
-        <div class="about-hero">
-          <p class="about-kicker">About CloudBridge Networks</p>
-          <h1>Building Core Internet Infrastructure Across Africa</h1>
-          <p class="about-lead">
-            CloudBridge Networks is a technology company focused on delivering reliable, scalable, and
-            affordable connectivity infrastructure for communities, enterprises, and independent operators.
+        <div class="page-heading">
+          <p class="eyebrow">About CloudBridge</p>
+          <h1>We build the satellite-backed networks that keep important sites online.</h1>
+          <p>
+            CloudBridge started from a practical need: too many important sites across Africa still
+            work with weak connectivity, unstable links, or no realistic terrestrial option at all.
           </p>
         </div>
 
-        <div class="about-metrics">
-          <article class="metric-card">
-            <h2>Mission</h2>
-            <p>
-              Democratize internet access across Africa through infrastructure deployment,
-              operational excellence, and locally relevant technology platforms.
-            </p>
-          </article>
-
-          <article class="metric-card">
-            <h2>Vision</h2>
-            <p>
-              A connected Africa where every school, business, and household has dependable,
-              high-speed internet as a foundation for growth.
-            </p>
-          </article>
-
-          <article class="metric-card">
-            <h2>Approach</h2>
-            <p>
-              Combine satellite backhaul, modern wireless architecture, and automated operations
-              to deliver carrier-grade performance at practical cost.
-            </p>
-          </article>
-        </div>
-
         <div class="about-grid">
-          <article class="about-card">
-            <h2>Founded in Nairobi</h2>
+          <article class="card about-card">
+            <h2>What the company is built to do</h2>
             <p>
-              Founded by Zachariah Omwenga Evans, CloudBridge Networks was built to solve a clear
-              infrastructure gap: high-quality connectivity remains out of reach for many regions.
+              We focus on satellite-backed internet infrastructure for hospitals, institutions,
+              businesses, community sites, and remote facilities where stable connectivity directly affects daily work.
             </p>
             <p>
-              Our team designs and operates resilient network systems tailored for African market
-              realities, from dense urban districts to underserved rural locations.
+              That means planning beyond a basic install. We think through site conditions,
+              internal distribution, resilience, billing requirements, and the support needed after a site goes live.
             </p>
           </article>
 
-          <aside class="about-card about-facts">
-            <h2>Company Facts</h2>
+          <aside class="card about-card facts-card">
+            <h2>Company facts</h2>
             <dl>
               <div class="fact-row">
                 <dt>Headquarters</dt>
@@ -80,185 +53,154 @@ import Footer from '../components/Footer.astro';
               </div>
               <div class="fact-row">
                 <dt>Focus</dt>
-                <dd>Infrastructure, ISP Enablement, Managed Connectivity</dd>
+                <dd>Satellite infrastructure, billing systems, and managed network operations</dd>
               </div>
             </dl>
           </aside>
         </div>
+      </div>
+    </section>
 
-        <div class="about-cta">
-          <h2>Work With CloudBridge Networks</h2>
-          <p>
-            If you are planning a new connectivity project or scaling an existing operation,
-            our team can help you design and deploy the right infrastructure.
-          </p>
-          <a href="/contact" class="btn btn-primary">Contact Us</a>
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How we work</p>
+          <h2>We keep the work direct.</h2>
+          <p>Projects are shaped by site conditions, operational risk, and long-term usability.</p>
+        </div>
+
+        <div class="principles-grid">
+          <article class="card principle-card">
+            <h3>Plan around uptime</h3>
+            <p>For hospitals, institutions, and businesses, reliable connectivity is part of how the site functions.</p>
+          </article>
+
+          <article class="card principle-card">
+            <h3>Build for remote realities</h3>
+            <p>We account for access limits, maintenance windows, and the practical constraints of underserved areas.</p>
+          </article>
+
+          <article class="card principle-card">
+            <h3>Stay involved after launch</h3>
+            <p>Support matters after deployment, not only during installation week.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card about-cta">
+          <div>
+            <p class="eyebrow">Work with us</p>
+            <h2>Need a site or network project reviewed?</h2>
+            <p>Share the site details and we can talk through the infrastructure, billing, and operational needs.</p>
+          </div>
+          <a href="/contact" class="btn btn-primary">Contact CloudBridge</a>
         </div>
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </BaseLayout>
 
 <style>
-  .about-section {
-    padding: 4.5rem 0;
-    background: var(--color-gray-50);
-  }
-
-  .about-hero {
-    max-width: 860px;
-    margin: 0 auto 2rem;
-    text-align: center;
-  }
-
-  .about-kicker {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 0.8rem;
-  }
-
-  .about-hero h1 {
-    margin-bottom: 1rem;
-  }
-
-  .about-lead {
-    font-size: 1.06rem;
-    color: var(--color-gray-600);
+  .page-heading {
     max-width: 760px;
-    margin: 0 auto;
+    margin-bottom: var(--space-24);
   }
 
-  .about-metrics {
+  .page-heading h1 {
+    max-width: 700px;
+    font-size: clamp(2.25rem, 5vw, 3.8rem);
+    line-height: 1.06;
+  }
+
+  .page-heading p:last-child {
+    max-width: 620px;
+  }
+
+  .about-grid,
+  .principles-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.9rem;
-    margin-bottom: 1.2rem;
+    gap: var(--space-16);
   }
 
-  .metric-card {
-    background: white;
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-lg);
-    padding: 1.15rem;
+  .about-card,
+  .principle-card {
+    padding: var(--space-24);
   }
 
-  .metric-card h2 {
-    font-size: 1.05rem;
-    margin-bottom: 0.45rem;
+  .about-card h2,
+  .principle-card h3 {
+    margin-bottom: var(--space-12);
   }
 
-  .metric-card p {
-    margin: 0;
-    color: var(--color-gray-600);
-    font-size: 0.95rem;
+  .about-card p + p {
+    margin-top: var(--space-16);
   }
 
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .about-card {
-    background: white;
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-lg);
-    padding: 1.25rem;
-  }
-
-  .about-card h2 {
-    font-size: 1.15rem;
-    margin-bottom: 0.65rem;
-  }
-
-  .about-card p {
-    color: var(--color-gray-600);
-    margin-bottom: 0.85rem;
-  }
-
-  .about-card p:last-child {
-    margin-bottom: 0;
-  }
-
-  .about-facts dl {
-    margin: 0;
+  .facts-card dl {
+    margin-top: var(--space-16);
   }
 
   .fact-row {
     display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 0.75rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--color-gray-200);
+    gap: var(--space-4);
+    padding: var(--space-12) 0;
+    border-top: 1px solid var(--color-border);
   }
 
-  .fact-row:last-child {
-    border-bottom: none;
+  .fact-row:first-child {
+    padding-top: 0;
+    border-top: 0;
   }
 
   .fact-row dt {
-    font-size: 0.82rem;
-    color: var(--color-gray-500);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-weight: 600;
+    color: var(--color-subtle);
   }
 
   .fact-row dd {
-    margin: 0;
-    font-size: 0.92rem;
-    color: var(--color-gray-700);
-    font-weight: 600;
+    color: var(--color-text);
   }
 
   .about-cta {
-    margin-top: 1rem;
-    text-align: center;
-    background: white;
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-lg);
-    padding: 1.6rem 1.2rem;
+    display: grid;
+    gap: var(--space-24);
+    padding: var(--space-32);
+  }
+
+  .about-cta .eyebrow {
+    margin-bottom: var(--space-12);
   }
 
   .about-cta h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-16);
   }
 
-  .about-cta p {
-    max-width: 720px;
-    margin: 0 auto 1rem;
-    color: var(--color-gray-600);
-  }
-
-  @media (min-width: 768px) {
-    .about-metrics {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
+  @media (min-width: 900px) {
     .about-grid {
-      grid-template-columns: 1.4fr 1fr;
-      gap: 1.1rem;
+      grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
     }
 
-    .about-card {
-      padding: 1.45rem;
+    .principles-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .about-cta {
+      grid-template-columns: minmax(0, 1.5fr) auto;
+      align-items: center;
     }
   }
 
   @media (max-width: 767px) {
-    .about-section {
-      padding: 3rem 0;
-    }
-
-    .fact-row {
-      grid-template-columns: 1fr;
-      gap: 0.25rem;
+    .page-heading h1 {
+      font-size: clamp(2rem, 10vw, 2.8rem);
     }
   }
 </style>

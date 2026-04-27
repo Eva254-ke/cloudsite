@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Inquiry sent"
+  description="Your CloudBridge Networks inquiry has been sent."
+  canonical="https://cloudbridge.network/contact-success"
+  noIndex={true}
+>
+  <Header />
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <div class="card success-card">
+          <div>
+            <p class="eyebrow">Inquiry sent</p>
+            <h1>Thanks. Your message is on its way to our team.</h1>
+            <p>
+              We have received the site details and will follow up after reviewing the
+              facility, location, and connectivity needs you shared.
+            </p>
+          </div>
+
+          <div class="success-actions">
+            <a href="/" class="btn btn-primary">Back to home</a>
+            <a href="/contact" class="btn btn-secondary">Send another inquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .success-card {
+    display: grid;
+    gap: var(--space-24);
+    padding: var(--space-32);
+    max-width: 840px;
+  }
+
+  .success-card .eyebrow {
+    margin-bottom: var(--space-12);
+  }
+
+  .success-card h1 {
+    margin-bottom: var(--space-16);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.06;
+    max-width: 680px;
+  }
+
+  .success-card p:last-of-type {
+    max-width: 620px;
+  }
+
+  .success-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-12);
+  }
+
+  @media (max-width: 767px) {
+    .success-card {
+      padding: var(--space-24);
+    }
+
+    .success-card h1 {
+      font-size: clamp(2rem, 10vw, 2.8rem);
+    }
+  }
+</style>

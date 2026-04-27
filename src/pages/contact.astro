@@ -1,235 +1,340 @@
 ---
-// contact.astro - Contact page
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Contact Us"
-  description="Get in touch with CloudBridge Networks. Nairobi-based team supporting WiFi entrepreneurs across Africa."
+  title="Contact"
+  description="Talk to CloudBridge Networks about satellite connectivity, African network infrastructure, billing systems, or managed operations support."
   canonical="https://cloudbridge.network/contact"
 >
   <Header />
-  
-  <main>
-    <section class="contact-section">
+
+  <main id="main">
+    <section>
       <div class="container">
-        <div class="contact-hero">
-          <h1>Contact CloudBridge Networks</h1>
+        <div class="page-heading">
+          <p class="eyebrow">Talk to us</p>
+          <h1>Tell us about the site and the connection problem.</h1>
           <p>
-            Talk to our team about infrastructure deployment, managed network services,
-            platform licensing, and strategic partnerships across Africa.
+            Send the project details straight to our team. We can review the location,
+            coverage needs, rollout constraints, billing setup, and the support model
+            required after launch.
           </p>
         </div>
-        
-        <div class="contact-layout">
-          <aside class="contact-info">
-            <article class="info-card">
-              <h2>Office</h2>
-              <p>Nairobi, Kenya</p>
-            </article>
 
-            <article class="info-card">
-              <h2>Email</h2>
-              <p>
-                <a href="mailto:hello@cloudbridge.network">hello@cloudbridge.network</a>
-              </p>
-            </article>
+        <div class="contact-grid">
+          <section class="card contact-card contact-form-card">
+            <div class="contact-form-header">
+              <h2>Send your inquiry</h2>
+              <p class="contact-intro">This goes straight to the CloudBridge team. No draft email opens.</p>
+            </div>
 
-            <article class="info-card">
-              <h2>Phone / WhatsApp</h2>
-              <p>
-                <a href="tel:+254742939094">+254 742 939 094</a>
-              </p>
-            </article>
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/hello@cloudbridge.network"
+              method="POST"
+              accept-charset="UTF-8"
+            >
+              <input type="hidden" name="_subject" value="CloudBridge infrastructure inquiry" />
+              <input type="hidden" name="_next" value="https://cloudbridge.network/contact-success" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thanks for contacting CloudBridge Networks. We have received your inquiry and will review the site details and follow up with you."
+              />
 
-            <article class="info-card">
-              <h2>Social</h2>
-              <div class="social-links">
-                <a href="https://twitter.com/cloudbridgeke" target="_blank" rel="noopener">Twitter</a>
-                <a href="https://linkedin.com/company/cloudbridge-networks" target="_blank" rel="noopener">LinkedIn</a>
+              <div class="contact-form-grid">
+                <div class="form-row">
+                  <label for="name">Full name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Your full name"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <label for="email">Work email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@organization.com"
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <label for="phone">Phone</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+254 ..."
+                    autocomplete="tel"
+                    inputmode="tel"
+                  />
+                </div>
+
+                <div class="form-row">
+                  <label for="company">Organization</label>
+                  <input
+                    id="company"
+                    name="organization"
+                    type="text"
+                    placeholder="Hospital, business, NGO, county office, or company"
+                    autocomplete="organization"
+                  />
+                </div>
+
+                <div class="form-row">
+                  <label for="facility">Facility or site type</label>
+                  <select id="facility" name="facility_type" required>
+                    <option value="">Select one</option>
+                    <option>Hospital or clinic</option>
+                    <option>School or institution</option>
+                    <option>Business site</option>
+                    <option>Community or remote facility</option>
+                    <option>Government or county site</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <label for="location">Site location</label>
+                  <input
+                    id="location"
+                    name="site_location"
+                    type="text"
+                    placeholder="Town, county, or region"
+                    autocomplete="address-level2"
+                    required
+                  />
+                </div>
+
+                <div class="form-row form-row-wide">
+                  <label for="support">What do you need?</label>
+                  <select id="support" name="support_needed" required>
+                    <option value="">Select one</option>
+                    <option>Satellite infrastructure only</option>
+                    <option>Infrastructure and site distribution</option>
+                    <option>Infrastructure, billing, and operations support</option>
+                    <option>Reliability upgrade for an existing site</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+
+                <div class="form-row form-row-wide">
+                  <label for="message">Project details</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="7"
+                    placeholder="Tell us about the site, the connectivity issue, the parts of the facility that need coverage, and anything urgent we should know."
+                    enterkeyhint="send"
+                    aria-describedby="contact-note"
+                    required
+                  ></textarea>
+                </div>
               </div>
-            </article>
-          </aside>
-          
-          <section class="contact-form-card">
-            <h2>Send a Message</h2>
-            <p class="form-intro">Share your project goals and our team will get back to you promptly.</p>
 
-            <form class="contact-form" novalidate>
-              <div class="form-row">
-                <label for="name">Full Name</label>
-                <input id="name" type="text" class="form-input" placeholder="Your full name" />
+              <div class="contact-actions">
+                <button type="submit" class="btn btn-primary btn-block">Send inquiry</button>
+                <p id="contact-note" class="contact-note">
+                  Your message is sent directly to
+                  <a href="mailto:hello@cloudbridge.network">hello@cloudbridge.network</a>.
+                </p>
               </div>
-
-              <div class="form-row">
-                <label for="email">Business Email</label>
-                <input id="email" type="email" class="form-input" placeholder="you@company.com" />
-              </div>
-
-              <div class="form-row">
-                <label for="company">Company Name</label>
-                <input id="company" type="text" class="form-input" placeholder="Your company" />
-              </div>
-
-              <div class="form-row">
-                <label for="message">Message</label>
-                <textarea id="message" class="form-input" rows="5" placeholder="Tell us about your requirements"></textarea>
-              </div>
-
-              <button type="button" class="btn btn-primary btn-full contact-submit">
-                Send Inquiry
-              </button>
             </form>
-
-            <p class="form-note">
-              Prefer email? Reach us directly at <a href="mailto:hello@cloudbridge.network">hello@cloudbridge.network</a>
-            </p>
           </section>
+
+          <aside class="card contact-card contact-info-card">
+            <h2>Contact details</h2>
+            <div class="contact-stack">
+              <div>
+                <p class="contact-label">Email</p>
+                <a href="mailto:hello@cloudbridge.network">hello@cloudbridge.network</a>
+              </div>
+              <div>
+                <p class="contact-label">Phone</p>
+                <a href="tel:+254742939094">+254 742 939 094</a>
+              </div>
+              <div>
+                <p class="contact-label">Location</p>
+                <p>Nairobi, Kenya</p>
+              </div>
+            </div>
+
+            <div class="contact-tips">
+              <h3>Useful first details</h3>
+              <ul>
+                <li>The facility type and location</li>
+                <li>Whether the site already has connectivity</li>
+                <li>The parts of the building that need coverage</li>
+                <li>Whether you also need billing or managed operations support</li>
+              </ul>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </BaseLayout>
 
 <style>
-  .contact-section {
-    padding: 4rem 0;
-    background: var(--color-gray-50);
+  .page-heading {
+    max-width: 680px;
+    margin-bottom: var(--space-24);
   }
 
-  .contact-hero {
-    max-width: 760px;
-    margin: 0 auto 2rem;
-    text-align: center;
+  .page-heading h1 {
+    max-width: 560px;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.08;
   }
 
-  .contact-hero p {
-    font-size: 1.05rem;
-    margin-bottom: 0;
+  .page-heading p:last-child {
+    max-width: 560px;
   }
 
-  .contact-layout {
+  .contact-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    align-items: start;
+    gap: var(--space-16);
   }
 
-  .contact-info {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+  .contact-card {
+    padding: var(--space-16);
   }
 
-  .info-card {
-    background: white;
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-lg);
-    padding: 1rem;
+  .contact-card h2 {
+    margin-bottom: var(--space-12);
+    font-size: 1.5rem;
   }
 
-  .info-card h2 {
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
+  .contact-form-header {
+    margin-bottom: var(--space-24);
   }
 
-  .info-card p {
-    margin: 0;
-    color: var(--color-gray-600);
-  }
-
-  .info-card a {
-    color: var(--color-primary);
-    font-weight: 600;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .contact-form-card {
-    background: white;
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--border-radius-lg);
-    padding: 1.25rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .contact-form-card h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .form-intro {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    color: var(--color-gray-600);
+  .contact-intro {
+    max-width: 34rem;
   }
 
   .contact-form {
     display: grid;
-    gap: 0.75rem;
+    gap: var(--space-16);
   }
 
-  .form-row label {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-gray-700);
+  .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
   }
 
-  .form-input {
-    width: 100%;
-    padding: 0.8rem 0.95rem;
-    border: 1.5px solid var(--color-gray-300);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: var(--transition);
-    background: white;
+  .contact-form-grid {
+    display: grid;
+    gap: var(--space-12);
   }
 
-  .form-input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  .form-row {
+    display: grid;
+    gap: var(--space-8);
   }
 
-  .contact-submit {
-    margin-top: 0.35rem;
+  .form-row-wide {
+    grid-column: 1 / -1;
   }
 
-  .form-note {
-    margin: 0.9rem 0 0;
-    font-size: 0.86rem;
-    color: var(--color-gray-600);
-    text-align: center;
+  .contact-actions {
+    display: grid;
+    gap: var(--space-12);
   }
 
-  .form-note a {
-    font-weight: 600;
+  .contact-note {
+    font-size: 0.9rem;
+    color: var(--color-subtle);
+  }
+
+  .contact-note a {
+    text-decoration: underline;
+    text-underline-offset: 0.14em;
+  }
+
+  .contact-stack {
+    display: grid;
+    gap: var(--space-16);
+  }
+
+  .contact-label {
+    margin-bottom: var(--space-4);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+  }
+
+  .contact-tips {
+    margin-top: var(--space-24);
+    padding-top: var(--space-24);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-tips h3 {
+    margin-bottom: var(--space-12);
+    font-size: 1.25rem;
+  }
+
+  .contact-tips ul {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 760px) {
+    .contact-card {
+      padding: var(--space-24);
+    }
+
+    .contact-form-grid {
+      gap: var(--space-16);
+    }
   }
 
   @media (min-width: 900px) {
-    .contact-layout {
-      grid-template-columns: 0.9fr 1.35fr;
-      gap: 1.25rem;
+    .contact-form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 980px) {
+    .contact-grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      align-items: start;
+    }
+
+    .contact-info-card {
+      position: sticky;
+      top: var(--space-24);
     }
   }
 
   @media (max-width: 767px) {
-    .contact-section {
-      padding: 3rem 0;
-    }
-
-    .contact-hero p {
-      font-size: 1rem;
+    .page-heading h1 {
+      font-size: clamp(1.9rem, 9vw, 2.5rem);
     }
   }
 </style>
