@@ -28,21 +28,23 @@
         <a href="/contact">Contact</a>
       </nav>
 
-      <a href="/contact" class="btn btn-primary header-cta">Talk to our team</a>
-      <button
-        type="button"
-        class="menu-button"
-        aria-expanded="false"
-        aria-controls="mobile-nav"
-        aria-label="Open navigation"
-        data-menu-toggle
-      >
-        <span class="menu-icon" aria-hidden="true">
-          <span></span>
-          <span></span>
-        </span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
+      <div class="header-actions">
+        <a href="/contact" class="btn btn-primary header-cta">Talk to our team</a>
+        <button
+          type="button"
+          class="menu-button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Open navigation"
+          data-menu-toggle
+        >
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
     </div>
 
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" hidden>
@@ -98,10 +100,10 @@
 
   .header-row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: var(--space-8);
-    min-height: 72px;
+    min-height: 64px;
   }
 
   .wordmark {
@@ -175,6 +177,14 @@
     color: var(--color-text);
   }
 
+  .header-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-self: end;
+    gap: var(--space-8);
+    min-width: 0;
+  }
+
   .header-cta,
   .menu-button {
     min-height: 40px;
@@ -188,8 +198,6 @@
     padding: 10px var(--space-12);
     font-size: 0.875rem;
     white-space: nowrap;
-    grid-column: 3;
-    justify-self: end;
   }
 
   .menu-button {
@@ -201,8 +209,6 @@
     background: transparent;
     flex-shrink: 0;
     color: var(--color-text);
-    grid-column: 2;
-    justify-self: end;
   }
 
   .mobile-nav {
@@ -293,9 +299,12 @@
       justify-self: center;
     }
 
-    .header-cta {
+    .header-actions {
       grid-column: 3;
       justify-self: end;
+    }
+
+    .header-cta {
       padding: var(--space-12) var(--space-16);
       font-size: 0.95rem;
     }
@@ -311,10 +320,6 @@
       display: none;
     }
 
-    .header-cta {
-      justify-self: end;
-    }
-
     .mobile-nav {
       border-top: 1px solid var(--color-border);
       padding-top: var(--space-16);
@@ -326,6 +331,11 @@
   }
 
   @media (max-width: 420px) {
+    .header-row {
+      min-height: 60px;
+      gap: var(--space-4);
+    }
+
     .wordmark-note {
       display: none;
     }
