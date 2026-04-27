@@ -193,7 +193,7 @@
   }
 
   .header-cta {
-    display: inline-flex;
+    display: none;
     flex-shrink: 0;
     padding: 10px var(--space-12);
     font-size: 0.875rem;
@@ -305,6 +305,7 @@
     }
 
     .header-cta {
+      display: inline-flex;
       padding: var(--space-12) var(--space-16);
       font-size: 0.95rem;
     }
@@ -318,6 +319,10 @@
   @media (max-width: 959px) {
     .desktop-nav {
       display: none;
+    }
+
+    .header-actions {
+      gap: 0;
     }
 
     .mobile-nav {
