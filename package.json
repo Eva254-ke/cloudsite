@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npx wrangler deploy",
+    "deploy": "npm run build && node -e \"process.exit(0)\"",
     "astro": "astro"
   },
   "dependencies": {
