@@ -4,7 +4,8 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-block">
+      <div class="footer-block footer-brand">
+        <img class="footer-logo" src="/logo.svg" alt="" width="44" height="44" />
         <p class="eyebrow">CloudBridge Networks</p>
         <p>
           Satellite-based network infrastructure for hospitals, institutions, businesses,
@@ -50,6 +51,18 @@
   .footer-grid {
     display: grid;
     gap: var(--space-32);
+  }
+
+  .footer-brand {
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .footer-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
   }
 
   .footer-block h2 {

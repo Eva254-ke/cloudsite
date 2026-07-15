@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro';
   <Header />
 
   <main id="main">
-    <section>
+    <section class="about-hero-section">
       <div class="container">
         <div class="page-heading">
           <p class="eyebrow">About CloudBridge</p>
@@ -24,7 +24,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="about-grid">
-          <article class="card about-card">
+          <article class="about-intro-pane">
             <h2>What the company is built to do</h2>
             <p>
               We focus on satellite-backed internet infrastructure for hospitals, institutions,
@@ -36,9 +36,18 @@ import Footer from '../components/Footer.astro';
             </p>
           </article>
 
-          <aside class="card about-card facts-card">
+          <div class="about-image-pane">
+            <img
+              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80&auto=format&fit=crop"
+              alt="CloudBridge collaborative team planning network rollout in office"
+              class="about-main-image"
+              loading="lazy"
+            />
+          </div>
+
+          <aside class="facts-pane">
             <h2>Company facts</h2>
-            <dl>
+            <dl class="facts-list">
               <div class="fact-row">
                 <dt>Headquarters</dt>
                 <dd>Nairobi, Kenya</dd>
@@ -61,7 +70,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section>
+    <section class="principles-section">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">How we work</p>
@@ -70,17 +79,20 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="principles-grid">
-          <article class="card principle-card">
+          <article class="principle-item">
+            <p class="principle-index">01</p>
             <h3>Plan around uptime</h3>
             <p>For hospitals, institutions, and businesses, reliable connectivity is part of how the site functions.</p>
           </article>
 
-          <article class="card principle-card">
+          <article class="principle-item">
+            <p class="principle-index">02</p>
             <h3>Build for remote realities</h3>
             <p>We account for access limits, maintenance windows, and the practical constraints of underserved areas.</p>
           </article>
 
-          <article class="card principle-card">
+          <article class="principle-item">
+            <p class="principle-index">03</p>
             <h3>Stay involved after launch</h3>
             <p>Support matters after deployment, not only during installation week.</p>
           </article>
@@ -88,10 +100,10 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section>
+    <section class="about-cta-section">
       <div class="container">
-        <div class="card about-cta">
-          <div>
+        <div class="about-cta-block">
+          <div class="about-cta-copy">
             <p class="eyebrow">Work with us</p>
             <h2>Need a site or network project reviewed?</h2>
             <p>Share the site details and we can talk through the infrastructure, billing, and operational needs.</p>
@@ -108,40 +120,59 @@ import Footer from '../components/Footer.astro';
 <style>
   .page-heading {
     max-width: 760px;
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-48);
   }
 
   .page-heading h1 {
     max-width: 700px;
     font-size: clamp(2.25rem, 5vw, 3.8rem);
-    line-height: 1.06;
+    line-height: 1.05;
+    margin-bottom: var(--space-16);
   }
 
   .page-heading p:last-child {
     max-width: 620px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-muted);
   }
 
-  .about-grid,
-  .principles-grid {
+  .about-grid {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-48);
   }
 
-  .about-card,
-  .principle-card {
-    padding: var(--space-24);
+  .about-intro-pane h2,
+  .facts-pane h2 {
+    margin-bottom: var(--space-16);
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
   }
 
-  .about-card h2,
-  .principle-card h3 {
-    margin-bottom: var(--space-12);
+  .about-intro-pane p {
+    color: var(--color-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
-  .about-card p + p {
+  .about-intro-pane p + p {
     margin-top: var(--space-16);
   }
 
-  .facts-card dl {
+  .about-image-pane {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--color-surface-strong);
+  }
+
+  .about-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .facts-list {
     margin-top: var(--space-16);
   }
 
@@ -162,39 +193,99 @@ import Footer from '../components/Footer.astro';
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-subtle);
+    color: var(--color-accent);
   }
 
   .fact-row dd {
     color: var(--color-text);
+    font-size: 0.95rem;
   }
 
-  .about-cta {
+  /* Principles section */
+  .principles-section {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .principles-grid {
     display: grid;
-    gap: var(--space-24);
-    padding: var(--space-32);
+    gap: var(--space-32);
   }
 
-  .about-cta .eyebrow {
-    margin-bottom: var(--space-12);
+  .principle-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--color-border);
   }
 
-  .about-cta h2 {
+  .principle-index {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+  }
+
+  .principle-item h3 {
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .principle-item p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  /* CTA Block */
+  .about-cta-section {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .about-cta-block {
+    display: grid;
+    gap: var(--space-32);
+    padding-top: var(--space-48);
+    border-top: 1px solid var(--color-border-strong);
+  }
+
+  .about-cta-copy h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.1;
     margin-bottom: var(--space-16);
+  }
+
+  .about-cta-copy p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    max-width: 680px;
+  }
+
+  @media (min-width: 760px) {
+    .principles-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   @media (min-width: 900px) {
     .about-grid {
-      grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-32);
     }
 
-    .principles-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .about-cta {
-      grid-template-columns: minmax(0, 1.5fr) auto;
+    .about-cta-block {
+      grid-template-columns: 1.3fr 0.7fr;
       align-items: center;
+      gap: var(--space-48);
+    }
+
+    .about-cta-block a {
+      justify-self: end;
     }
   }
 

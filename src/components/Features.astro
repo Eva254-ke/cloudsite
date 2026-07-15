@@ -12,21 +12,14 @@
       </p>
     </div>
 
-    <div class="infrastructure-visual card" aria-label="CloudBridge build path">
-      <div class="infrastructure-visual-header">
+    <div class="infrastructure-flow" aria-label="CloudBridge build path">
+      <div class="infrastructure-flow-header">
         <p class="eyebrow">What we build</p>
         <h3>From satellite backhaul to live site operations.</h3>
         <p>
           Each deployment is designed as one connected delivery path, not separate vendors
           for the link, the local network, and the systems that keep service running.
         </p>
-      </div>
-
-      <div class="infrastructure-track" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
       </div>
 
       <div class="build-grid">
@@ -112,121 +105,96 @@
       </p>
     </div>
 
-    <div class="capabilities-grid">
-      <article class="card capability-card">
-        <p class="capability-index">01</p>
-        <h3>Satellite backhaul</h3>
-        <p>Primary connectivity for facilities where terrestrial options are weak, unstable, or unavailable.</p>
-      </article>
+    <figure class="media-figure is-wide infrastructure-media" data-reveal>
+      <img
+        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=80&auto=format&fit=crop"
+        alt="Network and server equipment running managed connectivity infrastructure"
+        loading="lazy"
+      />
+    </figure>
 
-      <article class="card capability-card">
-        <p class="capability-index">02</p>
-        <h3>On-site network design</h3>
-        <p>Coverage planning for facilities, campuses, branch locations, and high-use operational areas.</p>
-      </article>
+    <div class="capabilities-section">
+      <div class="section-heading">
+        <p class="eyebrow">Capabilities</p>
+        <h2>Our core services at a glance</h2>
+      </div>
 
-      <article class="card capability-card">
-        <p class="capability-index">03</p>
-        <h3>Billing and access control</h3>
-        <p>Where the project needs it, we handle billing, user access flows, and platform-side operations.</p>
-      </article>
+      <div class="capabilities-grid">
+        <article class="capability-item">
+          <p class="capability-index">01</p>
+          <h3>Satellite backhaul</h3>
+          <p>Primary connectivity for facilities where terrestrial options are weak, unstable, or unavailable.</p>
+        </article>
 
-      <article class="card capability-card">
-        <p class="capability-index">04</p>
-        <h3>Remote deployment</h3>
-        <p>Installations in areas where access, maintenance windows, and logistics need to be thought through carefully.</p>
-      </article>
+        <article class="capability-item">
+          <p class="capability-index">02</p>
+          <h3>On-site network design</h3>
+          <p>Coverage planning for facilities, campuses, branch locations, and high-use operational areas.</p>
+        </article>
 
-      <article class="card capability-card">
-        <p class="capability-index">05</p>
-        <h3>Monitoring and support</h3>
-        <p>Post-deployment follow-up so a live site stays usable after handover.</p>
-      </article>
+        <article class="capability-item">
+          <p class="capability-index">03</p>
+          <h3>Billing and access control</h3>
+          <p>Where the project needs it, we handle billing, user access flows, and platform-side operations.</p>
+        </article>
 
-      <article class="card capability-card">
-        <p class="capability-index">06</p>
-        <h3>Ongoing operations</h3>
-        <p>Monitoring, issue follow-up, and practical support once the network is in service.</p>
-      </article>
+        <article class="capability-item">
+          <p class="capability-index">04</p>
+          <h3>Remote deployment</h3>
+          <p>Installations in areas where access, logistics, and maintenance windows require careful planning.</p>
+        </article>
+
+        <article class="capability-item">
+          <p class="capability-index">05</p>
+          <h3>Monitoring and support</h3>
+          <p>Post-deployment follow-up so a live site stays usable after handover.</p>
+        </article>
+
+        <article class="capability-item">
+          <p class="capability-index">06</p>
+          <h3>Ongoing operations</h3>
+          <p>Monitoring, issue follow-up, and practical support once the network is in service.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .infrastructure-visual {
-    margin-bottom: var(--space-32);
-    padding: var(--space-24);
-    display: grid;
-    gap: var(--space-24);
-    background: var(--color-surface);
+  #infrastructure {
+    background: var(--color-background);
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
   }
 
-  .infrastructure-visual-header {
+  .infrastructure-flow {
+    margin-bottom: var(--space-96);
+  }
+
+  .infrastructure-flow-header {
     display: grid;
     gap: var(--space-12);
     max-width: 760px;
+    margin-bottom: var(--space-48);
   }
 
-  .infrastructure-visual-header h3 {
+  .infrastructure-flow-header h3 {
     font-size: clamp(1.75rem, 3vw, 2.75rem);
-    line-height: 1.08;
-  }
-
-  .infrastructure-track {
-    display: none;
-    position: relative;
-    height: 20px;
-  }
-
-  .infrastructure-track::before {
-    content: '';
-    position: absolute;
-    top: 9px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-accent);
-  }
-
-  .infrastructure-track span {
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    transform: translateX(-50%);
-  }
-
-  .infrastructure-track span:nth-child(1) {
-    left: 12.5%;
-  }
-
-  .infrastructure-track span:nth-child(2) {
-    left: 37.5%;
-  }
-
-  .infrastructure-track span:nth-child(3) {
-    left: 62.5%;
-  }
-
-  .infrastructure-track span:nth-child(4) {
-    left: 87.5%;
+    line-height: 1.1;
   }
 
   .build-grid {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-24);
   }
 
   .build-step {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-16);
-    min-height: 236px;
-    padding: var(--space-24);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    background: var(--color-surface-strong);
+    min-height: 200px;
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--color-border);
   }
 
   .build-step-top {
@@ -238,7 +206,6 @@
 
   .build-step-index,
   .capability-index {
-    margin-bottom: var(--space-4);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -247,8 +214,10 @@
   }
 
   .build-step h3,
-  .capability-card h3 {
+  .capability-item h3 {
     margin-bottom: var(--space-8);
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
   }
 
   .build-step-label {
@@ -259,10 +228,18 @@
     letter-spacing: 0.08em;
   }
 
+  .build-step p,
+  .capability-item p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
   .build-step-rows {
     display: grid;
     gap: var(--space-8);
     margin-top: auto;
+    padding-top: var(--space-8);
   }
 
   .build-step-rows div {
@@ -279,33 +256,48 @@
 
   .build-step-rows strong {
     font-size: 0.95rem;
+    color: var(--color-text);
   }
 
   .infrastructure-summary {
-    padding: var(--space-16) var(--space-24);
-    border-radius: var(--radius-card);
-    background: var(--color-text);
-    color: var(--color-surface);
+    margin-top: var(--space-48);
+    padding: var(--space-16) 0;
+    border-top: 1px solid var(--color-border-strong);
+    color: var(--color-text);
     font-size: 1rem;
     font-weight: 600;
   }
 
+  .infrastructure-media {
+    margin-top: var(--space-48);
+  }
+
+  /* Capabilities */
+  .capabilities-section {
+    margin-top: var(--space-96);
+    padding-top: var(--space-48);
+    border-top: 1px solid var(--color-border);
+  }
+
   .capabilities-grid {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-32);
+    margin-top: var(--space-48);
   }
 
-  .capability-card {
-    padding: var(--space-24);
-    background: var(--color-surface);
-  }
-
-  .capability-index {
-    color: var(--color-subtle);
+  .capability-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--color-border);
   }
 
   @media (min-width: 760px) {
-    .build-grid,
+    .build-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .capabilities-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -317,7 +309,6 @@
     }
 
     .build-step-rows strong {
-      max-width: 13rem;
       text-align: right;
     }
   }
@@ -329,10 +320,6 @@
   }
 
   @media (min-width: 1180px) {
-    .infrastructure-track {
-      display: block;
-    }
-
     .build-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }

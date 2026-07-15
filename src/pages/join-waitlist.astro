@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro';
   <Header />
 
   <main id="main">
-    <section>
+    <section class="partner-section">
       <div class="container">
         <div class="page-heading">
           <p class="eyebrow">Partner with us</p>
@@ -24,24 +24,27 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="partner-grid">
-          <article class="card partner-card">
+          <article class="partner-item">
+            <p class="partner-index">01</p>
             <h2>Infrastructure projects</h2>
             <p>Connectivity planning for hospitals, institutions, businesses, and critical facilities.</p>
           </article>
 
-          <article class="card partner-card">
+          <article class="partner-item">
+            <p class="partner-index">02</p>
             <h2>Remote deployments</h2>
             <p>Satellite-backed internet for sites where terrestrial options are weak or unavailable.</p>
           </article>
 
-          <article class="card partner-card">
+          <article class="partner-item">
+            <p class="partner-index">03</p>
             <h2>Billing and operations</h2>
             <p>Support for access control, billing workflows, and the operating layer after rollout.</p>
           </article>
         </div>
 
-        <div class="card partner-cta">
-          <div>
+        <div class="partner-cta-block">
+          <div class="partner-cta-copy">
             <p class="eyebrow">Start here</p>
             <h2>Use the contact page to send the project details.</h2>
             <p>We can follow up on scope, site conditions, and the infrastructure or operations problem you need solved.</p>
@@ -60,33 +63,73 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
+  .page-heading {
+    max-width: 680px;
+    margin-bottom: var(--space-48);
+  }
+
+  .page-heading h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.08;
+    margin-bottom: var(--space-16);
+  }
+
+  .page-heading p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+
   .partner-grid {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-32);
+    margin-bottom: var(--space-96);
   }
 
-  .partner-card {
-    padding: var(--space-24);
+  .partner-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--color-border);
   }
 
-  .partner-card h2 {
-    margin-bottom: var(--space-12);
-    font-size: 1.5rem;
+  .partner-index {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
   }
 
-  .partner-cta {
+  .partner-item h2 {
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .partner-item p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .partner-cta-block {
     display: grid;
-    gap: var(--space-24);
-    margin-top: var(--space-32);
-    padding: var(--space-32);
+    gap: var(--space-32);
+    padding-top: var(--space-48);
+    border-top: 1px solid var(--color-border-strong);
   }
 
-  .partner-cta .eyebrow {
-    margin-bottom: var(--space-12);
-  }
-
-  .partner-cta h2 {
+  .partner-cta-copy h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.1;
     margin-bottom: var(--space-16);
+  }
+
+  .partner-cta-copy p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    max-width: 680px;
   }
 
   .partner-actions {
@@ -95,14 +138,17 @@ import Footer from '../components/Footer.astro';
     gap: var(--space-12);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 760px) {
     .partner-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  }
 
-    .partner-cta {
-      grid-template-columns: minmax(0, 1.5fr) auto;
+  @media (min-width: 900px) {
+    .partner-cta-block {
+      grid-template-columns: 1.3fr 0.7fr;
       align-items: center;
+      gap: var(--space-48);
     }
 
     .partner-actions {

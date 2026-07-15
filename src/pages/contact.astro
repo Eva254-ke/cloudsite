@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro';
   <Header />
 
   <main id="main">
-    <section>
+    <section class="contact-section">
       <div class="container">
         <div class="page-heading">
           <p class="eyebrow">Talk to us</p>
@@ -25,7 +25,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="contact-grid">
-          <section class="card contact-card contact-form-card">
+          <div class="contact-form-pane">
             <div class="contact-form-header">
               <h2>Send your inquiry</h2>
               <p class="contact-intro">This goes straight to the CloudBridge team. No draft email opens.</p>
@@ -156,9 +156,9 @@ import Footer from '../components/Footer.astro';
                 </p>
               </div>
             </form>
-          </section>
+          </div>
 
-          <aside class="card contact-card contact-info-card">
+          <aside class="contact-info-pane">
             <h2>Contact details</h2>
             <div class="contact-stack">
               <div>
@@ -196,44 +196,47 @@ import Footer from '../components/Footer.astro';
 <style>
   .page-heading {
     max-width: 680px;
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-48);
   }
 
   .page-heading h1 {
     max-width: 560px;
     font-size: clamp(2rem, 4vw, 3.1rem);
     line-height: 1.08;
+    margin-bottom: var(--space-16);
   }
 
   .page-heading p:last-child {
     max-width: 560px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-muted);
   }
 
   .contact-grid {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-48);
   }
 
-  .contact-card {
-    padding: var(--space-16);
-  }
-
-  .contact-card h2 {
+  .contact-form-pane h2,
+  .contact-info-pane h2 {
     margin-bottom: var(--space-12);
     font-size: 1.5rem;
+    letter-spacing: -0.02em;
   }
 
   .contact-form-header {
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-32);
   }
 
   .contact-intro {
-    max-width: 34rem;
+    font-size: 0.95rem;
+    color: var(--color-muted);
   }
 
   .contact-form {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-24);
   }
 
   .form-honeypot {
@@ -247,12 +250,37 @@ import Footer from '../components/Footer.astro';
 
   .contact-form-grid {
     display: grid;
-    gap: var(--space-12);
+    gap: var(--space-16);
   }
 
   .form-row {
     display: grid;
     gap: var(--space-8);
+  }
+
+  .form-row label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-control);
+    background: var(--color-surface-strong);
+    color: var(--color-text);
+    padding: var(--space-12);
+    font-size: 0.95rem;
+    transition: border-color 200ms ease;
+  }
+
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
   }
 
   .form-row-wide {
@@ -262,21 +290,25 @@ import Footer from '../components/Footer.astro';
   .contact-actions {
     display: grid;
     gap: var(--space-12);
+    margin-top: var(--space-8);
   }
 
   .contact-note {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-subtle);
   }
 
   .contact-note a {
     text-decoration: underline;
     text-underline-offset: 0.14em;
+    color: var(--color-text);
   }
 
   .contact-stack {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-24);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--color-border);
   }
 
   .contact-label {
@@ -285,11 +317,22 @@ import Footer from '../components/Footer.astro';
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-subtle);
+    color: var(--color-accent);
+  }
+
+  .contact-info-pane a {
+    font-size: 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .contact-info-pane p {
+    font-size: 1rem;
+    color: var(--color-text);
   }
 
   .contact-tips {
-    margin-top: var(--space-24);
+    margin-top: var(--space-48);
     padding-top: var(--space-24);
     border-top: 1px solid var(--color-border);
   }
@@ -297,38 +340,49 @@ import Footer from '../components/Footer.astro';
   .contact-tips h3 {
     margin-bottom: var(--space-12);
     font-size: 1.25rem;
+    letter-spacing: -0.01em;
   }
 
   .contact-tips ul {
+    list-style: none;
+    padding: 0;
     display: grid;
-    gap: var(--space-8);
+    gap: var(--space-12);
+  }
+
+  .contact-tips li {
+    position: relative;
+    padding-left: var(--space-24);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--color-muted);
+  }
+
+  .contact-tips li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-weight: 700;
   }
 
   @media (min-width: 760px) {
-    .contact-card {
-      padding: var(--space-24);
-    }
-
-    .contact-form-grid {
-      gap: var(--space-16);
-    }
-  }
-
-  @media (min-width: 900px) {
     .contact-form-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  @media (min-width: 980px) {
+  @media (min-width: 900px) {
     .contact-grid {
-      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: var(--space-48);
       align-items: start;
     }
 
-    .contact-info-card {
+    .contact-info-pane {
       position: sticky;
-      top: var(--space-24);
+      top: 120px;
     }
   }
 

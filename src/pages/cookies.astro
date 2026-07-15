@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro';
   <Header />
 
   <main id="main">
-    <section>
+    <section class="policy-section">
       <div class="container">
         <div class="page-heading">
           <p class="eyebrow">Cookies policy</p>
@@ -24,7 +24,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="policy-grid">
-          <article class="card policy-card">
+          <article class="policy-block">
             <h2>What we use today</h2>
             <p>
               This website currently uses a small number of cookies that support basic site
@@ -51,7 +51,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </article>
 
-          <article class="card policy-card">
+          <article class="policy-block">
             <h2>Necessary and optional cookies</h2>
             <p>
               Necessary cookies help the site function properly. Optional cookies can be used
@@ -64,7 +64,7 @@ import Footer from '../components/Footer.astro';
             </p>
           </article>
 
-          <article class="card policy-card">
+          <article class="policy-block">
             <h2>How to manage your choice</h2>
             <p>
               You can choose Accept cookies or Only necessary from the site banner.
@@ -76,7 +76,7 @@ import Footer from '../components/Footer.astro';
             </button>
           </article>
 
-          <article class="card policy-card">
+          <article class="policy-block">
             <h2>Contact</h2>
             <p>
               If you have questions about website cookies or consent on this site,
@@ -109,35 +109,65 @@ import Footer from '../components/Footer.astro';
 </script>
 
 <style>
+  .page-heading {
+    max-width: 680px;
+    margin-bottom: var(--space-48);
+  }
+
+  .page-heading h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.08;
+    margin-bottom: var(--space-16);
+  }
+
+  .page-heading p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+
   .policy-grid {
     display: grid;
-    gap: var(--space-16);
+    gap: var(--space-48);
   }
 
-  .policy-card {
-    padding: var(--space-24);
+  .policy-block {
+    padding-top: var(--space-24);
+    border-top: 1px solid var(--color-border);
   }
 
-  .policy-card h2 {
-    margin-bottom: var(--space-12);
+  .policy-block h2 {
+    margin-bottom: var(--space-16);
     font-size: 1.5rem;
+    letter-spacing: -0.02em;
   }
 
-  .policy-card p + p {
+  .policy-block p {
+    color: var(--color-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .policy-block p + p {
     margin-top: var(--space-16);
   }
 
   .policy-table {
     display: grid;
-    gap: var(--space-12);
+    gap: var(--space-8);
     margin-top: var(--space-24);
   }
 
   .policy-row {
     display: grid;
     gap: var(--space-4);
-    padding-top: var(--space-12);
+    padding: var(--space-12) 0;
     border-top: 1px solid var(--color-border);
+  }
+
+  .policy-row:first-child {
+    border-top: 0;
+    padding-top: 0;
   }
 
   .policy-label {
@@ -145,16 +175,18 @@ import Footer from '../components/Footer.astro';
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-subtle);
+    color: var(--color-accent);
   }
 
   .policy-note {
+    font-size: 0.85rem;
     color: var(--color-subtle);
   }
 
-  .policy-card code {
+  .policy-block code {
     color: var(--color-text);
     font-size: 0.95rem;
+    font-family: monospace;
   }
 
   [data-reset-cookie-consent] {
@@ -164,6 +196,7 @@ import Footer from '../components/Footer.astro';
   @media (min-width: 900px) {
     .policy-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-32) var(--space-48);
     }
   }
 </style>

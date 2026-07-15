@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="cookie-banner card" data-cookie-banner hidden>
+<div class="cookie-banner" data-cookie-banner hidden>
   <div class="cookie-copy">
     <p class="eyebrow">Cookies</p>
     <p class="cookie-title">We use cookies to remember your preferences and support basic site functions.</p>
@@ -93,9 +93,25 @@
     z-index: 30;
     display: grid;
     gap: var(--space-16);
-    width: min(440px, calc(100vw - 32px));
+    width: min(420px, calc(100vw - 32px));
     padding: var(--space-24);
-    background: var(--color-surface);
+    background: var(--color-background);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-lg);
+    animation: cookie-in 320ms ease-out both;
+  }
+
+  @keyframes cookie-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   .cookie-copy {

@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-import Pricing from '../components/Pricing.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -16,145 +14,339 @@ import Footer from '../components/Footer.astro';
   <main id="main">
     <Hero />
 
-    <section id="mission">
+    <!-- Intro -->
+    <section class="intro-section">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Mission</p>
+        <div class="intro-head">
+          <p class="eyebrow">CloudBridge Networks</p>
           <h2>Internet infrastructure for the sites that keep work moving.</h2>
           <p>
             We build around continuity. That means looking beyond installation and making sure
             the network, billing, and support layers can keep serving the site over time.
           </p>
+          <a href="#tour" class="btn btn-primary">Watch the tour</a>
         </div>
 
-        <div class="mission-grid">
-          <article class="card mission-card">
-            <p class="mission-index">01</p>
-            <h3>Backhaul that reaches hard sites</h3>
-            <p>Satellite links for facilities beyond the practical reach of stable terrestrial connectivity.</p>
-          </article>
+        <figure class="media-figure is-wide intro-media">
+          <img
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80&auto=format&fit=crop"
+            alt="Connected networks over Africa seen from space"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
 
-          <article class="card mission-card">
-            <p class="mission-index">02</p>
-            <h3>Site coverage that makes sense</h3>
-            <p>Planning for the full facility or campus, not just the link arriving at the roof.</p>
-          </article>
-
-          <article class="card mission-card">
-            <p class="mission-index">03</p>
-            <h3>Operations after deployment</h3>
-            <p>Billing, monitoring, access flows, and support so the site remains usable once it is live.</p>
-          </article>
-        </div>
-
-        <div class="mission-visual card" aria-label="CloudBridge delivery stack">
-          <div class="mission-visual-header">
-            <p class="eyebrow">Delivery stack</p>
-            <h3>One operating model from backhaul to long-term support.</h3>
+    <!-- Alternating feature rows -->
+    <section class="features-section">
+      <div class="container">
+        <div class="feature-row">
+          <figure class="feature-media">
+            <img
+              src="https://tse4.mm.bing.net/th/id/OIP.amHQoLcZ8bUOdrWJoL-QegHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Connectivity reaching remote sites across Africa"
+              loading="lazy"
+            />
+          </figure>
+          <div class="feature-copy">
+            <p class="eyebrow">Network layer</p>
+            <h3>Backhaul that reaches hard sites.</h3>
             <p>
-              Every site is planned as a working system. The link, the local network,
-              billing, and the support layer are designed to stay connected.
+              Satellite links for facilities beyond the practical reach of stable terrestrial
+              connectivity. We size the link to the site and the expected load before anything ships.
             </p>
+            <ul class="feature-list">
+              <li>Primary connectivity where terrestrial options are weak</li>
+              <li>Coverage planned for the full facility or campus</li>
+            </ul>
           </div>
+        </div>
 
-          <div class="mission-track" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="feature-row reverse">
+          <figure class="feature-media">
+            <img
+              src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=1000&q=80&auto=format&fit=crop"
+              alt="Network cabling and routing equipment"
+              loading="lazy"
+            />
+          </figure>
+          <div class="feature-copy">
+            <p class="eyebrow">Site layer</p>
+            <h3>Coverage across the whole site.</h3>
+            <p>
+              On-site equipment and distribution across wards, offices, branches, and shared
+              spaces. The link arriving at the roof is only the start of the working system.
+            </p>
+            <ul class="feature-list">
+              <li>Indoor and outdoor access points</li>
+              <li>Edge routing and backup power on site</li>
+            </ul>
           </div>
+        </div>
 
-          <div class="mission-flow">
-            <article class="mission-step">
-              <div class="mission-step-top">
-                <p class="mission-step-index">01</p>
-                <p class="mission-step-label">Network layer</p>
-              </div>
-              <h3>Backhaul</h3>
-              <p>Satellite capacity for remote and underserved sites.</p>
-              <div class="mission-step-rows">
-                <div>
-                  <span>Role</span>
-                  <strong>Primary route</strong>
-                </div>
-                <div>
-                  <span>Coverage</span>
-                  <strong>Hard-to-reach locations</strong>
-                </div>
-              </div>
-            </article>
-
-            <article class="mission-step">
-              <div class="mission-step-top">
-                <p class="mission-step-index">02</p>
-                <p class="mission-step-label">Site layer</p>
-              </div>
-              <h3>Distribution</h3>
-              <p>Coverage across wards, offices, branches, campuses, and shared spaces.</p>
-              <div class="mission-step-rows">
-                <div>
-                  <span>Scope</span>
-                  <strong>Facility-wide rollout</strong>
-                </div>
-                <div>
-                  <span>Output</span>
-                  <strong>Usable local network</strong>
-                </div>
-              </div>
-            </article>
-
-            <article class="mission-step">
-              <div class="mission-step-top">
-                <p class="mission-step-index">03</p>
-                <p class="mission-step-label">Service layer</p>
-              </div>
-              <h3>Operations</h3>
-              <p>Billing, access control, monitoring, and service workflows tied to the live network.</p>
-              <div class="mission-step-rows">
-                <div>
-                  <span>Handles</span>
-                  <strong>Billing and access</strong>
-                </div>
-                <div>
-                  <span>Connects</span>
-                  <strong>Live service rules</strong>
-                </div>
-              </div>
-            </article>
-
-            <article class="mission-step">
-              <div class="mission-step-top">
-                <p class="mission-step-index">04</p>
-                <p class="mission-step-label">Support layer</p>
-              </div>
-              <h3>Support</h3>
-              <p>Continuity follow-up and practical response after the site is live.</p>
-              <div class="mission-step-rows">
-                <div>
-                  <span>Focus</span>
-                  <strong>Issue response</strong>
-                </div>
-                <div>
-                  <span>Outcome</span>
-                  <strong>Long-term continuity</strong>
-                </div>
-              </div>
-            </article>
+        <div class="feature-row">
+          <figure class="feature-media">
+            <img
+              src="https://tse2.mm.bing.net/th/id/OIP.PWRtxxNjIXpgQuGrfqQOzAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Monitoring and operating the network after launch"
+              loading="lazy"
+            />
+          </figure>
+          <div class="feature-copy">
+            <p class="eyebrow">Operating layer</p>
+            <h3>Operations and billing after launch.</h3>
+            <p>
+              Billing, monitoring, access flows, and support so the site remains usable once it is
+              live. One team owns the link and the operating layer that keeps it running.
+            </p>
+            <ul class="feature-list">
+              <li>Accounts, access rules, and usage-based billing</li>
+              <li>24/7 monitoring and rapid local response</li>
+            </ul>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <p class="mission-visual-summary">
-            One team covers infrastructure, billing, monitoring, and ongoing support.
+    <!-- Statement -->
+    <section class="statement-section">
+      <div class="container">
+        <div class="statement-band">
+          <p class="statement-eyebrow">One operating team</p>
+          <p class="statement-text">
+            From first link design to day-to-day continuity — infrastructure, billing, and
+            operations stay under one team so the site keeps working after launch.
           </p>
         </div>
       </div>
     </section>
 
-    <Features />
-    <Pricing />
-
-    <section>
+    <!-- Systems icon grid -->
+    <section class="systems-section">
       <div class="container">
-        <div class="card closing-card">
+        <div class="section-heading">
+          <p class="eyebrow">Coverage &amp; systems</p>
+          <h2>Everything a site needs, planned as one system.</h2>
+          <p>
+            From the satellite link to monitoring and billing, each layer is designed to stay
+            connected under one operating team.
+          </p>
+        </div>
+
+        <ul class="systems-grid">
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a8 8 0 0 1 16 0"/><circle cx="12" cy="14" r="2"/><path d="M12 16v4"/><path d="M9 20h6"/></svg>
+            </span>
+            <span class="system-name">Satellite backhaul</span>
+          </li>
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+            </span>
+            <span class="system-name">Hospitals &amp; clinics</span>
+          </li>
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="18.5" r="1.2"/></svg>
+            </span>
+            <span class="system-name">Site Wi-Fi</span>
+          </li>
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+            </span>
+            <span class="system-name">Resilience</span>
+          </li>
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M7 16a4 4 0 0 1 10 0"/><circle cx="12" cy="19" r="1"/></svg>
+            </span>
+            <span class="system-name">Monitoring</span>
+          </li>
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg>
+            </span>
+            <span class="system-name">Billing &amp; access</span>
+          </li>
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+            </span>
+            <span class="system-name">14-country reach</span>
+          </li>
+          <li class="system-tile">
+            <span class="system-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M8 16h.01M12 16h.01M16 16h.01"/></svg>
+            </span>
+            <span class="system-name">24/7 support</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Use cases -->
+    <section class="usecases-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Built for</p>
+          <h2>One operating model for every kind of site.</h2>
+          <p>
+            From a regional hospital to a remote clinic, CloudBridge plans the link, the local
+            network, billing, and support as one connected system.
+          </p>
+        </div>
+
+        <div class="usecases-grid">
+          <article class="usecase-card">
+            <div class="usecase-media">
+              <img
+                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=80&auto=format&fit=crop"
+                alt="Hospital corridor with staff and patients"
+                loading="lazy"
+              />
+            </div>
+            <div class="usecase-body">
+              <h3>Hospitals &amp; clinics</h3>
+              <p>Reliable connectivity for clinical work, reporting, staff coordination, and operations.</p>
+            </div>
+          </article>
+
+          <article class="usecase-card">
+            <div class="usecase-media">
+              <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80&auto=format&fit=crop"
+                alt="Modern office workspace with teams collaborating"
+                loading="lazy"
+              />
+            </div>
+            <div class="usecase-body">
+              <h3>Businesses &amp; institutions</h3>
+              <p>Satellite-backed service, branch connectivity, billing workflows, and managed support.</p>
+            </div>
+          </article>
+
+          <article class="usecase-card">
+            <div class="usecase-media">
+              <img
+                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80&auto=format&fit=crop"
+                alt="Technicians building and configuring network equipment on site"
+                loading="lazy"
+              />
+            </div>
+            <div class="usecase-body">
+              <h3>Remote &amp; community sites</h3>
+              <p>Deployments in underserved areas where the internet stack must be practical and self-sustaining.</p>
+            </div>
+          </article>
+
+          <article class="usecase-card">
+            <div class="usecase-media">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop"
+                alt="Operations dashboard showing network monitoring"
+                loading="lazy"
+              />
+            </div>
+            <div class="usecase-body">
+              <h3>Operations &amp; billing</h3>
+              <p>Monitoring, access control, and billing tied to live usage under one operating layer.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase / tour -->
+    <section id="tour" class="showcase-section">
+      <div class="container">
+        <div class="feature-row">
+          <figure class="feature-media video-media">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="https://assets.mixkit.co/videos/7888/7888-thumb-720-0.jpg"
+            >
+              <source src="https://assets.mixkit.co/videos/7888/7888-720.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <div class="feature-copy">
+            <p class="eyebrow">Product tour</p>
+            <h3>See how a CloudBridge deployment stays online.</h3>
+            <p>
+              A look at the operating layer: monitoring, failover, billing, and support working
+              together after the site goes live.
+            </p>
+            <a href="/contact" class="btn btn-primary">Plan a site with us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="news-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Insights</p>
+          <h2>Field notes on building African network infrastructure.</h2>
+        </div>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-media">
+              <img
+                src="https://images.unsplash.com/photo-1751201731388-1f40ae4fe059?w=800&q=80&auto=format&fit=crop"
+                alt="Satellite dishes against a dramatic sky"
+                loading="lazy"
+              />
+            </div>
+            <span class="news-tag">Backhaul</span>
+            <h3>Why satellite is the right primary link for remote sites</h3>
+          </article>
+          <article class="news-card">
+            <div class="news-media">
+              <img
+                src="https://images.unsplash.com/photo-1771514637249-8fba948cd02d?w=800&q=80&auto=format&fit=crop"
+                alt="Hospital ward with patient and family"
+                loading="lazy"
+              />
+            </div>
+            <span class="news-tag">Healthcare</span>
+            <h3>Designing ward coverage that clinical teams actually use</h3>
+          </article>
+          <article class="news-card">
+            <div class="news-media">
+              <img
+                src="https://images.unsplash.com/photo-1680992044138-ce4864c2b962?w=800&q=80&auto=format&fit=crop"
+                alt="Data center server room"
+                loading="lazy"
+              />
+            </div>
+            <span class="news-tag">Operations</span>
+            <h3>Monitoring that keeps a live site usable day after day</h3>
+          </article>
+          <article class="news-card">
+            <div class="news-media">
+              <img
+                src="https://images.unsplash.com/photo-1604348489791-f95132c5d8c0?w=800&q=80&auto=format&fit=crop"
+                alt="African city skyline at sunset"
+                loading="lazy"
+              />
+            </div>
+            <span class="news-tag">Coverage</span>
+            <h3>Expanding reliable connectivity across 14 countries</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing-section">
+      <div class="container">
+        <div class="closing-card">
           <div class="closing-copy">
             <p class="eyebrow">Next step</p>
             <h2>Tell us about the site, the location, and the uptime problem.</h2>
@@ -163,7 +355,6 @@ import Footer from '../components/Footer.astro';
               satellite connectivity plus billing and operational support under one team.
             </p>
           </div>
-
           <div class="closing-actions">
             <a href="/contact" class="btn btn-primary">Start a conversation</a>
             <a href="/about" class="btn btn-secondary">About CloudBridge</a>
@@ -177,221 +368,473 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
-  .mission-grid {
+  /* Intro */
+  .intro-section {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+  }
+
+  .intro-head {
+    max-width: 760px;
+    margin: 0 auto var(--space-48);
+    text-align: center;
     display: grid;
     gap: var(--space-16);
+    justify-items: center;
   }
 
-  .mission-card {
-    padding: var(--space-24);
-    background: var(--color-surface);
-  }
-
-  .mission-index {
-    margin-bottom: var(--space-12);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-subtle);
-  }
-
-  .mission-card h3 {
-    margin-bottom: var(--space-12);
-  }
-
-  .mission-visual {
-    margin-top: var(--space-32);
-    padding: var(--space-24);
-    display: grid;
-    gap: var(--space-24);
-    background: var(--color-surface);
-  }
-
-  .mission-visual-header {
-    display: grid;
-    gap: var(--space-12);
-    max-width: 760px;
-  }
-
-  .mission-visual-header h3 {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  .intro-head h2 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
     line-height: 1.08;
   }
 
-  .mission-track {
-    display: none;
-    position: relative;
-    height: 20px;
+  .intro-head p {
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 620px;
   }
 
-  .mission-track::before {
-    content: '';
-    position: absolute;
-    top: 9px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-border-strong);
+  .intro-media {
+    border-radius: var(--radius-lg);
+    aspect-ratio: 16 / 9;
   }
 
-  .mission-track span {
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border: 4px solid var(--color-accent);
-    border-radius: 50%;
-    background: var(--color-surface);
-    transform: translateX(-50%);
-  }
-
-  .mission-track span:nth-child(1) {
-    left: 12.5%;
-  }
-
-  .mission-track span:nth-child(2) {
-    left: 37.5%;
-  }
-
-  .mission-track span:nth-child(3) {
-    left: 62.5%;
-  }
-
-  .mission-track span:nth-child(4) {
-    left: 87.5%;
-  }
-
-  .mission-flow {
-    display: grid;
-    gap: var(--space-12);
-  }
-
-  .mission-step {
-    display: grid;
-    gap: var(--space-16);
-    padding: var(--space-24);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    background: var(--color-surface-strong);
-  }
-
-  .mission-step-top {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-12);
-    align-items: center;
-  }
-
-  .mission-step-index {
-    color: var(--color-accent);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .mission-step-label {
-    color: var(--color-subtle);
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .mission-step h3 {
-    margin-bottom: var(--space-8);
-    font-size: 1.25rem;
-  }
-
-  .mission-step-rows {
-    display: grid;
-    gap: var(--space-8);
-    margin-top: var(--space-8);
-  }
-
-  .mission-step-rows div {
-    display: grid;
-    gap: var(--space-4);
-    padding-top: var(--space-8);
+  /* Feature rows */
+  .features-section {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
     border-top: 1px solid var(--color-border);
   }
 
-  .mission-step-rows span {
-    color: var(--color-subtle);
-    font-size: 0.875rem;
+  .feature-row {
+    display: grid;
+    gap: var(--space-32);
+    align-items: center;
+    padding: var(--space-64) 0;
   }
 
-  .mission-step-rows strong {
+  .feature-row + .feature-row {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .feature-media {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-strong);
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-media img,
+  .feature-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .feature-copy {
+    display: grid;
+    gap: var(--space-16);
+  }
+
+  .feature-copy h3 {
+    font-size: clamp(1.75rem, 3.4vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  .feature-copy p {
+    color: var(--color-muted);
+    font-size: 1.02rem;
+    line-height: 1.62;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-12);
+    margin-top: var(--space-8);
+  }
+
+  .feature-list li {
+    position: relative;
+    padding-left: var(--space-24);
     font-size: 0.95rem;
+    color: var(--color-muted);
   }
 
-  .mission-visual-summary {
-    padding: var(--space-16) var(--space-24);
-    border-radius: var(--radius-card);
-    background: var(--color-text);
-    color: var(--color-surface);
-    font-size: 1rem;
+  .feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  /* Statement */
+  .statement-section {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .statement-band {
+    display: grid;
+    gap: var(--space-16);
+    justify-items: center;
+    text-align: center;
+    padding: var(--space-48);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-strong);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .statement-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .statement-text {
+    max-width: 720px;
+    font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
     font-weight: 600;
+  }
+
+  /* Systems */
+  .systems-section {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .systems-grid {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-48) 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-16);
+  }
+
+  .system-tile {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    padding: var(--space-20);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .system-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--brand-gradient-soft);
+    color: var(--color-brand);
+  }
+
+  .system-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .system-name {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+  }
+
+  /* Use cases */
+  .usecases-section {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .usecases-grid {
+    display: grid;
+    gap: var(--space-24);
+    margin-top: var(--space-48);
+  }
+
+  .usecase-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    transition: transform 240ms ease, box-shadow 240ms ease;
+  }
+
+  .usecase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .usecase-media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--color-surface-strong);
+  }
+
+  .usecase-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .usecase-card:hover .usecase-media img {
+    transform: scale(1.05);
+  }
+
+  .usecase-body {
+    display: grid;
+    gap: var(--space-8);
+    padding: var(--space-24);
+  }
+
+  .usecase-body h3 {
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .usecase-body p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  /* Showcase */
+  .showcase-section {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .video-media {
+    background: #05070f;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* News */
+  .news-section {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .news-grid {
+    display: grid;
+    gap: var(--space-32);
+    margin-top: var(--space-48);
+  }
+
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .news-media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: var(--radius-control);
+    background: var(--color-surface-strong);
+    margin-bottom: var(--space-8);
+  }
+
+  .news-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .news-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+
+  .news-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  /* Closing */
+  .closing-section {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+    border-top: 1px solid var(--color-border);
   }
 
   .closing-card {
     display: grid;
-    gap: var(--space-24);
-    padding: var(--space-32);
-  }
-
-  .closing-copy .eyebrow {
-    margin-bottom: var(--space-12);
+    gap: var(--space-32);
+    padding-top: var(--space-48);
+    border-top: 1px solid var(--color-border-strong);
   }
 
   .closing-copy h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.1;
     margin-bottom: var(--space-16);
+  }
+
+  .closing-copy p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    max-width: 720px;
   }
 
   .closing-actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-12);
+    margin-top: var(--space-12);
   }
 
-  @media (min-width: 900px) {
-    .mission-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .mission-track {
-      display: block;
-    }
-
-    .mission-step {
-      min-height: 250px;
-    }
-
-    .mission-step-rows div {
-      display: flex;
-      justify-content: space-between;
+  @media (min-width: 760px) {
+    .stats-band {
+      grid-template-columns: repeat(4, 1fr);
       gap: var(--space-16);
     }
 
-    .mission-step-rows strong {
-      max-width: 14rem;
-      text-align: right;
+    .stat {
+      border-top: 0;
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+      padding-top: 0;
+      padding-left: var(--space-24);
+    }
+
+    .stat:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .systems-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .usecases-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 900px) {
+    .feature-row {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-64);
+    }
+
+    .feature-row.reverse .feature-media {
+      order: 2;
     }
 
     .closing-card {
-      grid-template-columns: minmax(0, 1.45fr) auto;
+      grid-template-columns: 1.3fr 0.7fr;
       align-items: center;
+      gap: var(--space-48);
     }
 
     .closing-actions {
       justify-content: flex-end;
+      margin-top: 0;
     }
   }
 
-  @media (min-width: 1180px) {
-    .mission-flow {
+  @media (min-width: 1100px) {
+    .systems-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+
+    .usecases-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .news-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  /* Section differentiation: alternating tints + colored finish (like medicinevirtual) */
+  .intro-section { background: var(--color-background); }
+  .features-section { background: var(--color-section-tint); }
+  .statement-section { background: var(--color-background); }
+  .systems-section { background: var(--color-section-tint); }
+  .usecases-section { background: var(--color-background); }
+  .showcase-section { background: var(--color-section-tint); }
+  .news-section { background: var(--color-background); }
+
+  .closing-section {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 55%, #0e7490 100%);
+    color: #fff;
+    border-top: 0;
+  }
+
+  .closing-section .closing-card {
+    border-top-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .closing-section .closing-copy h2 {
+    color: #fff;
+  }
+
+  .closing-section .closing-copy p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .closing-section .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+  }
+
+  .closing-section .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #fff;
+  }
+
+  /* Lazy section rendering: skip off-screen sections until near viewport.
+     `auto` intrinsic size remembers the last height to avoid scroll jumps. */
+  .intro-section,
+  .features-section,
+  .statement-section,
+  .systems-section,
+  .usecases-section,
+  .showcase-section,
+  .news-section,
+  .closing-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
   }
 </style>
