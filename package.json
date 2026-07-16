@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npm run build && node -e \"process.exit(0)\"",
+    "deploy": "echo 'Deploy handled by Cloudflare Pages'",
     "astro": "astro"
   },
   "dependencies": {
