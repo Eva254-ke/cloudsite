@@ -87,7 +87,7 @@ npm run preview
 
 ## UX and Design Notes
 
-- Home hero uses an external Starlink-related image and professional feature cards
+- Home hero uses a remote community site image (BLM) and professional feature cards
 - Waitlist CTAs were replaced with Contact-based value CTAs
 - Pricing cards were compacted for better readability and executive presentation
 - Pricing calculator includes:
