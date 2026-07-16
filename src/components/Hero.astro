@@ -146,10 +146,15 @@
   }
 
   .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-12);
     margin-top: var(--space-32);
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 48px;
   }
 
   .btn-ghost {
@@ -211,10 +216,6 @@
     .hero-section .container {
       padding-top: 104px;
       padding-bottom: 84px;
-    }
-
-    .hero-actions .btn {
-      width: 100%;
     }
   }
 </style>
