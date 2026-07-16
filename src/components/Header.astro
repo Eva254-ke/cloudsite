@@ -88,6 +88,12 @@
     -webkit-backdrop-filter: saturate(180%) blur(14px);
   }
 
+  @media (prefers-color-scheme: dark) {
+    .site-header {
+      background: rgba(8, 12, 20, 0.92);
+    }
+  }
+
   @supports not (backdrop-filter: blur(14px)) {
     .site-header {
       background: rgba(255, 255, 255, 0.95);
